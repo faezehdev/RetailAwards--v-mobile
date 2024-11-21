@@ -403,7 +403,7 @@ line-height: 25.02px;
 color: #000000;
 font-family: "IRANSansWeb300";
 }
-.aboutUs-C .Text p{
+.aboutUs-mobile .Text p{
   font-size: 14px;
   font-weight: 400;
   line-height: 21.91px;
@@ -413,8 +413,8 @@ font-family: "IRANSansWeb300";
 
 
   
-.ContactUs-C fieldset [data-bc-section-title],
-.ContactUs-C [data-bc-title-container] {
+.Contactus-mobile fieldset [data-bc-section-title],
+.Contactus-mobile [data-bc-title-container] {
   display: none;
   margin: 0;
   padding: 0;
@@ -467,38 +467,38 @@ input[type="text"]:focus,
   outline: 0 none;
   background-color: transparent;
 }
-.ContactUs-C [data-bc-schema-column] {
+.Contactus-mobile [data-bc-schema-column] {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 2em;
 }
 
-.ContactUs-C .col,
-.ContactUs-C .captchaBox {
+.Contactus-mobile .col,
+.Contactus-mobile .captchaBox {
   width: 100%;
   display: flex;
 }
-.ContactUs-C .captchaBox {
+.Contactus-mobile .captchaBox {
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1em;
 }
-.ContactUs-C .captchaBox input.codeinputm{
+.Contactus-mobile .captchaBox input.codeinputm{
   order: 1;
 }
-.ContactUs-C .captchaBox .refresh{
+.Contactus-mobile .captchaBox .refresh{
   order: 2;
 }
-.ContactUs-C .captchaBox .capcha{
+.Contactus-mobile .captchaBox .capcha{
   order: 3;
 }
-.ContactUs-C .captchaBox input[type="hidden"]{
+.Contactus-mobile .captchaBox input[type="hidden"]{
   display: none;
 }
-.ContactUs-C .captchaBox input {
+.Contactus-mobile .captchaBox input {
   width: 100% !important;
 
   font-size: 14px !important;
@@ -511,7 +511,7 @@ input[type="text"]:focus,
   padding: 0 0.5em !important;
   background-color: #171717 !important;
 }
-.ContactUs-C .captchaBox input::placeholder,
+.Contactus-mobile .captchaBox input::placeholder,
 [data-bc-answer-container] input[type="text"]::placeholder ,
 [data-bc-answer-container] textarea::placeholder{
   font-size: 14px !important;
@@ -521,16 +521,16 @@ input[type="text"]:focus,
   font-family: "IRANSansWeb400" !important;
   opacity: .7;
 }
-.ContactUs-C .captchaBox img {
+.Contactus-mobile .captchaBox img {
   height: 40px;
 }
 [data-bc-section] {
   padding: 0 !important;
   margin: 0 !important;
 }
-.ContactUs-C .Box {
+.Contactus-mobile .Box {
   margin: auto;
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -579,7 +579,7 @@ input[type="text"]:focus,
   right: 0;
   margin: auto;
 }
-.ContactUs-C .Section-2 .Col:nth-child(1) .Answer p {
+.Contactus-mobile .Section-2 .Col:nth-child(1) .Answer p {
   color: #002b43;
   font-size: 14px;
   font-family: "IRANSansWeb500";
@@ -587,7 +587,7 @@ input[type="text"]:focus,
   font-weight: 500;
   text-align: center;
 }
-.ContactUs-C .Contacts .Answer p {
+.Contactus-mobile .Contacts .Answer p {
 opacity: 0;
 transform: translateY(100%);
 transition: all 700ms;
@@ -599,8 +599,8 @@ font-family: "IRANSansWeb400";
 text-align: center;
 }
 
-.ContactUs-C .Contacts  a,
-.ContactUs-C .Contacts .Answer a{
+.Contactus-mobile .Contacts  a,
+.Contactus-mobile .Contacts .Answer a{
 opacity: 0;
 transform: translateY(100%);
 transition: all 700ms;
@@ -634,4 +634,65 @@ footer,
  }
 mark {
   background: #FEBE1B !important;
+}
+
+
+.SelectBoxes .select_wrap.active .default_option:before {
+  top: 25px;
+  transform: rotate(-225deg);
+}
+.SelectBoxes .select_wrap .option {
+  display: flex;
+  align-items: center;
+}
+.SelectBoxes .select_wrap .option p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21.91px;
+  color: black;
+}
+.SelectBoxes .select_wrap .option .icon {
+  background: url("https://i.imgur.com/oEZu0sK.png") no-repeat 0 0;
+  width: 32px;
+  height: 32px;
+  margin-right: 15px;
+}
+
+.SelectBoxes .select_wrap .select_ul li:first-child:hover {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.SelectBoxes .select_wrap .select_ul li:last-child:hover {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.SelectBoxes .default_option::before {
+  border: 2px solid;
+  border-color: transparent transparent #5d676e #5d676e;
+  transform: rotate(-45deg);
+}
+.Etelaei-mobile .Section-2 p,
+.Etelaei-mobile .Section-1 p{
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21.91px;
+  color: #000000;
+  font-family: "IRANSansWeb300";
+  opacity: 0;
+transform: translateY(100%);
+transition: all 700ms;
+}
+.aboutUs-mobile .Text p{
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21.91px;
+  color:#ffffff;
+  font-family: "IRANSansWeb300";
+  opacity: 0;
+transform: translateY(100%);
+transition: all 700ms;
+}
+.aboutUs-mobile .inVideo {
+  position: relative;
 }

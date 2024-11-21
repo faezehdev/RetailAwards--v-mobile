@@ -1,0 +1,89 @@
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="211184"> 
+    <member name="list-blogg" size="268x268" propertyid="7249" type="list" order="id desc"/> 
+</basis>
+<basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" catid="211184"> 
+    <member name="cat-blog"  propertyid="7249" request="cat" type="tree"/> 
+</basis>
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اطلاعیه</title>
+    <meta name="description" content="اطلاعیه">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputMobile.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css" />
+</head>
+<body>
+    <main class="EtelaeiList-mobile overflow-hidden " dir="rtl">
+        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
+       <div class="EtelaeiListContents w-90p mx-auto mt-[5em] flex flex-col">
+        <div class="Title-main mr-auto my-[3em] relative overflow-hidden w-full
+                flex justify-start items-center ">
+             <div class="contentss w-[40px] flex justify-center items-center">
+                <span class="line duration-700 mx-auto flex my-auto translate-y-[5px]
+                justify-center delay-100  w-0 h-[1px] bg-black "></span>
+             </div>
+                
+             <basis core="print" datamembername="db.cat-blog">
+                <layout>
+                    @child
+                </layout>
+                <face filter="catid=211184">
+                
+                  <h1 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] mr-[.5em]
+                  font-medium text-base leading-25.04 text-black">
+                  @title
+                  </h1>
+                </face>
+             </basis>
+              </div>
+        <div class="listcontents w-full flex flex-col gap-[1em]">
+            <div class="EtelaeiLists w-full  flex flex-col gap-[2em] mb-[5em]">
+                <basis core="print" datamembername="db.list-blogg">
+                    <layout>
+                        @child
+                    </layout>
+                    <face>
+                <a href="@link" alt="@title" title="@title" class="EtalaeiItem group/EtalaeiItem w-full flex relative justify-center opacity-0 translate-y-[100%] duration-1000 flex-col gap-3 border-b border-[#febe1bbe] pb-[.5em]
+                items-center overflow-hidden">
+                <div class="IMG w-full flex justify-center">
+                   <img src="@00268X00268prp" alt="@title" title="@title" class="w-full object-cover">
+                </div>
+                 <div class="Date w-full flex justify-start">
+                   <span class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-gray-middle">
+                    @prp_7249
+                   </span>
+                 </div>
+                 <div class="title w-full flex justify-start">
+                   <h2 class="font-IRANSansWeb500 font-medium text-sm leading-21.91 text-black">
+                    @title
+                   </h2>
+                 </div>
+                 <span class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                   <p class="font-IRANSansWeb400 font-normal text-sm leading-21.91 text-black">مشاهده </p>
+                   <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black relative 
+                   ">
+                   <div class="dot w-[5px] h-[5px]  translate-y-[-50%]
+                    bg-black absolute top-[70%] translate-x-[-50%]"></div>
+                   </div>
+               </span>
+               </a>
+                    </face>
+                </basis>
+            </div>
+        
+     
+        </div>
+      
+    </div>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+    </main>
+    <basis core="call" file="script-mobile.inc" />
+    <script src="[##cms.cms.cdn##]/js/headerMobile-Dark.js"></script>
+    <script src="[##cms.cms.cdn##]/js/etelaeiList-mobile.js"></script>
+
+</body>
+</html>

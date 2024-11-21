@@ -1,0 +1,84 @@
+<basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" >
+    <member request="cat" type="tree" name="TghdirCat" parentid="211052"  />
+</basis>
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تقدیر</title>
+    <meta name="description" content="تقدیر">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputMobile.css">
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css" />
+</head>
+<body>
+    <main class="TaghdirCat-mobile overflow-hidden " dir="rtl">
+        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
+
+       <div class="TaghdirCatContents w-90p mx-auto mt-[5em] flex flex-col">
+        <div class="Title-main mr-auto my-[3em] relative overflow-hidden w-full
+                flex justify-start items-center ">
+             <div class="contentss w-[40px] flex justify-center items-center">
+                <span class="line duration-700 mx-auto flex my-auto translate-y-[5px]
+                justify-center delay-100  w-0 h-[1px] bg-black "></span>
+             </div>
+             <basis core="print" datamembername="db.TghdirCat">
+                <layout>
+                    @child
+                </layout>
+                <face filter="catid=211052">     
+                  <h1 class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] mr-[.5em]
+                  font-medium text-lg leading-28.17 text-black">
+                  @urltitle
+                  </h1>
+                </face>
+             </basis>
+              
+              </div>
+        <div class="listcontents w-full flex flex-col gap-[1em]">
+            <div class="TaghdirCats w-full  flex flex-col gap-[2em] mb-[5em]">
+                <basis core="print" datamembername="db.TghdirCat">
+                    <layout>
+                        @child
+                    </layout>
+                    <face filter="parentid=211052">
+                        <a href="@link" title="@title" alt="@title" class="Taghdir w-full flex relative justify-center opacity-0 translate-y-[100%] duration-1000
+                        items-center">
+                        <div class="IMG w-full flex justify-center">
+                           <img src="@image" title="@title" alt="@title" class="w-full object-cover">
+                        </div>
+                        <div class="OV absolute flex flex-col w-90p rounded-tl-[43px] gap-3
+                         left-0 right-0 mx-auto bottom-0 h-max py-[1em] bg-[#00000080] z-1">
+                           <div class="title w-max max-w-max flex justify-start">
+                               <h2 class="font-IRANSansWeb500 font-medium text-sm leading-21.91 text-white">
+                                @title
+                               </h2>
+                           </div>
+                           <span class="ShowMore ml-auto w-max flex gap-[10px] overflow-hidden justify-center">
+                               <p class="font-IRANSansWeb400 font-normal text-sm leading-21.91 text-white">مشاهده </p>
+                               <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white relative 
+                               ">
+                               <div class="dot w-[5px] h-[5px]  translate-y-[-50%]
+                                bg-white absolute top-[70%] translate-x-[-50%]"></div>
+                               </div>
+                           </span>
+                        </div>
+                       </a>
+                    </face>
+                </basis>
+           
+       
+            </div>
+        
+     
+        </div>
+      
+    </div>
+    <basis core="call" file="footer.inc" pageindex="[##cms.cms.pageindex##]" />
+    </main>
+    <basis core="call" file="script-mobile.inc" />
+    <script src="[##cms.cms.cdn##]/js/headerMobile-Dark.js"></script>
+    <script src="[##cms.cms.cdn##]/js/taghdirCat-mobile.js"></script>
+</body>
+</html>
