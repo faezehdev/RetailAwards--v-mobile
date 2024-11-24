@@ -25,7 +25,7 @@ const lenis =  new Lenis({
 let flag = false;
 OP_Btn.addEventListener('click',()=>{
     flag = !flag
-    switchScroll();
+    // switchScroll();
     mobileCont.classList.add('OP')
     lenis.stop()
     gsap.to('.Mobile_Header .Is_top',{
@@ -93,7 +93,7 @@ gsap.set('.Mobile_Header .Circle',{
 CL_Btn.addEventListener('click',()=>{
     flag = !flag
     lenis.start()
-    switchScroll();
+    // switchScroll();
     gsap.to('.Mobile_Header .Menu_Link',{
         x:'-200%',
         opacity:0,

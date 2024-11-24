@@ -696,3 +696,6 @@ transition: all 700ms;
 .aboutUs-mobile .inVideo {
   position: relative;
 }
+.plyr {
+  width: 100%;
+}
