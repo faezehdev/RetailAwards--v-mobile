@@ -896,6 +896,10 @@ video {
   margin-top: 2em;
 }
 
+.mt-\[3em\] {
+  margin-top: 3em;
+}
+
 .mt-\[5em\] {
   margin-top: 5em;
 }
@@ -1031,6 +1035,10 @@ video {
   height: 50svh;
 }
 
+.h-\[51svh\] {
+  height: 51svh;
+}
+
 .h-\[54px\] {
   height: 54px;
 }
@@ -1062,10 +1070,6 @@ video {
 .h-max {
   height: -moz-max-content;
   height: max-content;
-}
-
-.h-\[51svh\] {
-  height: 51svh;
 }
 
 .min-h-\[400px\] {
