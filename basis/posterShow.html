@@ -50,9 +50,9 @@
 
 <body>
     <div class="posterShow">
-        <basis core="call" file="header1.inc" />
+        <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
 
-        <section class="section1 mb-28">
+        <section class="section1 mb-10">
             <!-- Slider main container -->
             <div class="swiper mainPosterSlider relative h-svh">
                 <!-- Additional required wrapper -->
@@ -62,9 +62,9 @@
 
                     <basis core="print" datamembername="db.posterGallery">
 
-                        <face filter="ord=1">
+                        <face filter="ord=50">
                             <div class="swiper-slide">
-                                <div class="imgS">
+                                <div class="imgS h-full w-full">
                                     <img class="w-full" src="/@largeIMG" alt="@name">
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
 
                 </div>
 
-                <div class="btns flex py-3 px-4 gap-x-2.5 items-center bg-white z-1 absolute right-0 bottom-0">
+                <div class="btns w-full flex py-3 px-4 gap-x-2.5 items-center bg-white z-1 absolute right-0 bottom-0">
                     <div class="prevMain cursor-pointer">
                         <span
                             class="font-IRANSansWeb300 text-sm after:w-[70px] after:h-px after:bg-black flex gap-x-2 items-center after:block">
@@ -84,7 +84,7 @@
                         </span>
 
                     </div>
-                    <div class="pagination1"></div>
+                    <div class="pagination1 text-center"></div>
                     <div class="nextMain cursor-pointer">
                         <span
                             class="font-IRANSansWeb300 text-sm before:w-[70px] before:h-px before:bg-black flex gap-x-2 items-center before:block">
@@ -97,9 +97,44 @@
 
             </div>
         </section>
-        <section class="section2 mb-28 w-90p mx-auto" dir="rtl">
-            <div class="flex items-center gap-x-6 justify-between">
-                <div class="rSide w-full pl-[5%]">
+        <section class="section2 mb-10 w-90p mx-auto" dir="rtl">
+            <div class="">
+
+                <div class="lSide w-full mb-5">
+
+                    <basis core="print" datamembername="db.poster">
+
+                        <face filter="TypeID=150">
+                            <div class="Title-main mb-7 relative overflow-hidden flex justify-start gap-4 items-center">
+                                <span class="line-content relative w-[60px]">
+                                    <span
+                                        class="line duration-700 absolute flex left-0 mx-auto justify-center right-0 delay-100 w-0 h-[2px] bg-black my-auto"></span>
+                                </span>
+
+                                <h1
+                                    class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-base leading-37.57 text-blabg-black">
+                                    @Answer
+                                </h1>
+                            </div>
+
+                        </face>
+                    </basis>
+
+                    <basis core="print" datamembername="db.poster">
+                        <layout>
+                            <div
+                                class="para scrollTop duration-300 font-IRANSansWeb400  text-sm text-justify overflow-hidden">
+
+                                @child
+                            </div>
+                        </layout>
+
+                        <face filter="TypeID=129">
+                            @largetext
+                        </face>
+                    </basis>
+                </div>
+                <div class="rSide w-full">
                     <basis core="repeater" name="rep2" datamembername="db.posterGallery2">
                         <basis core="dbsource" source="media" name="db" lid="1" mid="15"
                             mainid="[##rep2.current.Table2ID##]">
@@ -114,9 +149,9 @@
 
                                 <face filter="TypeID=254">
                                     <div data-videoUrl="@largetext"
-                                        class="play-popup-container playVideoOpen playbtn w-[126px] h-[126px] absolute cursor-pointer">
+                                        class="play-popup-container playVideoOpen playbtn w-[55x] h-[55x] absolute cursor-pointer">
                                         <div class="play-popup-btn relative flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55"
                                                 viewBox="0 0 153.417 153.417">
                                                 <g id="Group_457" data-name="Group 457"
                                                     transform="translate(-1061.792 -431.792)">
@@ -136,11 +171,11 @@
                                                 <div class="play-popup-btn__circle__bullet"></div>
                                                 <span class="play-popup-btn__circle__text text-left">
                                                     <p
-                                                        class="font-IRANSansWeb300  text-lg text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                        class="font-IRANSansWeb300  text-[8px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                                         Play
 
                                                     </p>
-                                                    <p class="font-IRANSansWeb500 text-lg text-white">
+                                                    <p class="font-IRANSansWeb500 text-[8px] text-white">
 
                                                         video
                                                     </p>
@@ -156,40 +191,7 @@
 
                     </basis>
                 </div>
-                <div class="lSide w-full">
-
-                    <basis core="print" datamembername="db.poster">
-
-                        <face filter="TypeID=150">
-                            <div class="Title-main mb-7 relative overflow-hidden flex justify-start gap-4 items-center">
-                                <span class="line-content relative w-[60px]">
-                                    <span
-                                        class="line duration-700 absolute flex left-0 mx-auto justify-center right-0 delay-100 w-0 h-[2px] bg-black my-auto"></span>
-                                </span>
-
-                                <h1
-                                    class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-blabg-black">
-                                    @Answer
-                                </h1>
-                            </div>
-
-                        </face>
-                    </basis>
-
-                    <basis core="print" datamembername="db.poster">
-                        <layout>
-                            <div
-                                class="para scrollTop duration-300 font-IRANSansWeb400  text-sm text-justify overflow-hidden openPara">
-
-                                @child
-                            </div>
-                        </layout>
-
-                        <face filter="TypeID=129">
-                            @largetext
-                        </face>
-                    </basis>
-                </div>
+           
 
             </div>
         </section>
@@ -197,15 +199,15 @@
         <basis core="print" datamembername="db.posterGallery">
             <layout>
              
-                <section class="section3 mb-28" dir="rtl">
-                    <div class="Title-main w-90p mx-auto mb-16 relative overflow-hidden flex justify-start gap-4 items-center">
+                <section class="section3 mb-10" dir="rtl">
+                    <div class="Title-main w-90p mx-auto mb-6 relative overflow-hidden flex justify-start gap-4 items-center">
                         <span class="line-content relative w-[60px]">
                             <span
                                 class="line duration-700 absolute flex left-0 mx-auto justify-center right-0 delay-100 w-0 h-[2px] bg-black my-auto"></span>
                         </span>
         
                         <h4
-                            class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-blabg-black">
+                            class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-base leading-37.57 text-black ">
                             حامیان ما در دوره های گذشته مراسم Iran Retail Awards
                                         </h4>
                     </div>
@@ -236,7 +238,7 @@
         </basis>
 
 <basis core="group" if="'[##db.teghdir.RowNumber##]' <> ''">
-    <section class="section4 mb-28" dir="rtl">
+    <section class="section4 mb-16" dir="rtl">
 
         <basis core="print" datamembername="db.poster">
        
@@ -248,7 +250,7 @@
                     </span>
     
                     <h2
-                        class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-blabg-black">
+                        class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-base leading-37.57 text-black">
                      @text
                     </h2>
                 </div>
@@ -260,8 +262,48 @@
             </face>
         </basis>
 
-        <div class="flex items-end gap-x-6">
-            <div class="btns pr-[5%]">
+        <div class="">
+            <div class="sliderSection w-full overflow-hidden">
+                <div class="swiper  commendSlider px-[5%]">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+
+                        <basis core="print" datamembername="db.teghdir">
+                           
+                            <face>
+                                
+                                <div class="swiper-slide relative group overflow-hidden">
+                                    <div class="imgS w-full group-hover:scale-125 duration-[5s]">
+                                        <img class="w-full grayscale hover:grayscale-0 duration-1000"
+                                            src="/@image" alt="@name">
+                                    </div>
+                                    <div
+                                        class="over p-2.5 backdrop-blur-md duration-500 absolute bottom-0 right-0 w-full bg-black/[0.5]">
+                                        <h3 class="font-IRANSansWeb500 text-sm text-white mb-3">
+                                         @title
+                                        </h3>
+                                        <a href="/@link"
+                                            class="ShowMore hover:no-underline justify-start mt-3 self-baseline w-auto flex gap-[10px] overflow-hidden">
+                                            <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">
+                                                بیشتر بدانید
+                                            </p>
+                                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative 
+                                    ">
+                                                <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
+                                     bg-white text-white absolute top-[70%] translate-x-[-50%]"></div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </face>
+                        </basis>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="btns w-90p flex mx-auto mt-7 justify-between items-center">
                 <div class="preNext gap-x-2 flex">
                     <div class="prevCommen group cursor-pointer">
                         <svg width="42" height="42" viewBox="0 0 42 42" fill="none"
@@ -288,53 +330,14 @@
 
                     </div>
                 </div>
-                <a class="py-3 hover:bg-mainYellow duration-300 px-9 rounded-md bg-light-gray flex items-center justify-center mt-4"
-                    href="">
+                <a class="py-3 hover:bg-mainYellow duration-300 px-9 rounded-md bg-light-gray flex items-center justify-center"
+                    href="/تقدیر">
                     <span class="font-IRANSansWeb400 text-sm whitespace-nowrap">
                         مشاهده دسته‌بندی
                     </span>
                 </a>
             </div>
-            <div class="sliderSection w-full overflow-hidden">
-                <div class="swiper  commendSlider">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-
-                        <basis core="print" datamembername="db.teghdir">
-                           
-                            <face>
-                                
-                                <div class="swiper-slide relative group overflow-hidden">
-                                    <div class="imgS w-full group-hover:scale-125 duration-[5s]">
-                                        <img class="w-full grayscale hover:grayscale-0 duration-1000"
-                                            src="/@image" alt="@name">
-                                    </div>
-                                    <div
-                                        class="over py-4 group-hover:translate-y-[0] -translate-y-100 duration-500 rounded-tl-[43px] px-5 absolute bottom-0 right-0 w-[calc(100%-26px)] bg-black/[0.5]">
-                                        <h3 class="font-IRANSansWeb500 text-sm text-white mb-3">
-                                         @title
-                                        </h3>
-                                        <a href="/@link"
-                                            class="ShowMore hover:no-underline justify-start mt-3 self-baseline w-auto flex gap-[10px] overflow-hidden">
-                                            <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">
-                                                بیشتر بدانید
-                                            </p>
-                                            <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative 
-                                    ">
-                                                <div class="dot w-[5px] h-[5px] rounded-full translate-y-[-50%]
-                                     bg-white text-white absolute top-[70%] translate-x-[-50%]"></div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </face>
-                        </basis>
-
-                    </div>
-
-                </div>
-            </div>
+            
         </div>
     </section>
     
@@ -343,7 +346,7 @@
 
 
 <basis core="group" if="'[##db.posterGallery1001.RowNumber##]' <> ''">
-    <section class="section5 mb-24 pt-16 pb-8 bg-black" dir="rtl">
+    <section class="section5 mb-8 pt-16 pb-8 bg-black" dir="rtl">
 
         <div class="Title-main w-90p mx-auto relative overflow-hidden flex justify-start gap-4 items-center">
             <span class="line-content relative w-[60px]">
@@ -352,7 +355,7 @@
             </span>
 
             <h3
-                class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-white">
+                class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-base leading-37.57 text-white">
                 پنل های همایش
                             </h3>
         </div>
@@ -371,7 +374,7 @@
 
                         <div class="swiper-slide group">
                             <div
-                                class="inVideo end-full duration-1000 brightness-[0.3] blur-[10px] group-[.swiper-slide-active]:brightness-100 group-[.swiper-slide-active]:blur-0 group-[.swiper-slide-active]:-translate-y-[49px] flex items-center justify-center ">
+                                class="inVideo end-full duration-1000 brightness-[0.3] blur-[10px] group-[.swiper-slide-active]:brightness-100 group-[.swiper-slide-active]:blur-0 group-[.swiper-slide-active]:-translate-y-[14px] flex items-center justify-center ">
 
 
                                 <img class="w-full" src="/[##rep1001.current.largeIMG##]" alt="">
@@ -380,9 +383,9 @@
                                 <basis core="print" datamembername="db.link1001">
                                     <face filter="TypeID=254">
                                         <div data-videoUrl="@largetext"
-                                            class="play-popup-container playVideoOpen playbtn w-[126px] h-[126px] absolute cursor-pointer">
+                                            class="play-popup-container playVideoOpen playbtn w-[50px] h-[50px] absolute cursor-pointer">
                                             <div class="play-popup-btn relative flex items-center justify-center">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                                                     viewBox="0 0 153.417 153.417">
                                                     <g id="Group_457" data-name="Group 457"
                                                         transform="translate(-1061.792 -431.792)">
@@ -401,11 +404,11 @@
                                                     <div class="play-popup-btn__circle__bullet"></div>
                                                     <span class="play-popup-btn__circle__text text-left">
                                                         <p
-                                                            class="font-IRANSansWeb300  text-lg text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                            class="font-IRANSansWeb300  text-[8px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                                             Play
         
                                                         </p>
-                                                        <p class="font-IRANSansWeb500 text-lg text-white">
+                                                        <p class="font-IRANSansWeb500 text-[8px] text-white">
         
                                                             video
                                                         </p>
@@ -417,30 +420,31 @@
                                 </basis>
                             </div>
                         </div>
-                        
+                 
                     </basis>
                  
                 </div>
-                <div class="conferSliderPagination mx-auto absolute !bottom-0 left-0 right-0 flex justify-center items-center z-1 !w-[537px] bg-black pt-5 pb-9">
-                </div>
-                <div
-                    class="nextconfer [&.swiper-button-disabled]:hidden cursor-pointer group z-1 absolute top-[50%] right-0">
-                    <div
-                        class="inner relative flex items-center gap-x-2 group-hover:before:scale-x-[1.2] before:duration-300 before:origin-right before:w-[71px] before:inline-block before:h-px before:bg-white">
-                        <span
-                            class="group-hover:-translate-x-[20px] duration-300 font-IRANSansWeb300 text-sm text-white">
-                            NEXT
-                        </span>
+
+                <div class="flex">
+                    <div class="nextconfer [&.swiper-button-disabled]:opacity-0 cursor-pointer group z-1 ">
+                        <div
+                            class="inner relative flex items-center gap-x-2 group-hover:before:scale-x-[1.2] before:duration-300 before:origin-right before:w-[20px] before:inline-block before:h-px before:bg-white">
+                            <span
+                                class="group-hover:-translate-x-[20px] duration-300 font-IRANSansWeb300 text-sm text-white">
+                                NEXT
+                            </span>
+                        </div>
                     </div>
-                </div>
-                <div
-                    class="prevconfer [&.swiper-button-disabled]:hidden cursor-pointer group z-1 absolute top-[50%] left-0">
-                    <div
-                        class="inner relative flex items-center gap-x-2 group-hover:after:scale-x-125 after:duration-300 after:origin-left after:w-[71px] after:inline-block after:h-px after:bg-white">
-                        <span
-                            class="group-hover:translate-x-[20px] duration-300 font-IRANSansWeb300 text-sm text-white">
-                            PREV
-                        </span>
+                    <div class="conferSliderPagination w-full mx-auto relative !bottom-0 left-0 right-0 flex justify-center items-center z-1 bg-black">
+                    </div>
+                    <div class="prevconfer [&.swiper-button-disabled]:opacity-0 cursor-pointer group z-1">
+                        <div
+                            class="inner relative flex items-center gap-x-2 group-hover:after:scale-x-125 after:duration-300 after:origin-left after:w-[20px] after:inline-block after:h-px after:bg-white">
+                            <span
+                                class="group-hover:translate-x-[20px] duration-300 font-IRANSansWeb300 text-sm text-white">
+                                PREV
+                            </span>
+                        </div>
                     </div>
                 </div>
 
@@ -448,7 +452,7 @@
 
 
 
-            <div class="swiper txtSlider w-[400px] mx-auto">
+            <div class="swiper txtSlider w-[290px] mt-5 mx-auto">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
@@ -459,7 +463,7 @@
                             <div class="swiper-slide">
     
                                 <div class="textContainer">
-                                    <h4 class="text-white text-center pb-5 border-b border-b-white mb-5">
+                                    <h4 class="text-white font-IRANSansWeb700 text-sm text-center pb-5 border-b border-b-white mb-5">
                                        @name
                                     </h4>
                                     <div
@@ -471,7 +475,7 @@
                                     <!-- <button class="btn btn-primary"> -->
     
                                     <button data-toggle="modal" type="button" data-target=".bs-example-modal-openParaSlide@RowNumber"
-                                        class="ShowMore btnOpenParaSlide btn hover:no-underline justify-start mt-3 self-baseline w-auto flex gap-[10px] overflow-hidden">
+                                        class="ShowMore btnOpenParaSlide btn hover:no-underline justify-start mt-3 mx-auto self-baseline w-auto flex gap-[10px] overflow-hidden">
                                         <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">بیشتر
                                             بدانید</p>
                                         <div
@@ -496,16 +500,16 @@
             
 
         
-        <div class="modal fade bs-example-modal-openParaSlide@RowNumber" tabindex="-1" role="dialog" dir="rtl"
+        <div class="modal fade bs-example-modal-openParaSlide[##db.posterGallery1001.RowNumber##]" tabindex="-1" role="dialog" dir="rtl"
             aria-labelledby="myLargeModalLabel" aria-hidden="true">
     
-            <div class="modal-dialog w-[77%]">
+            <div class="modal-dialog w-90p relative" style="margin: 100px auto 0 auto;">
     
                 <!-- Modal Content: begins -->
                 <div class="modal-content bg-light-gray shadow-none">
     
                     <!-- Modal Header -->
-                    <div class="modal-header absolute ring-0" style="border: none; transform: translateX(100%);">
+                    <div class="modal-header absolute " style="border: none;border: none;top: -75px;transform: translateY(100%);padding: 0;">
                         <button type="button" class="close group opacity-100" data-dismiss="modal"
                             aria-label="Close">
                             <span aria-hidden="true">
@@ -543,7 +547,7 @@
                                 [##rep.current.name##]
                             </h4>
                             <div class="para font-IRANSansWeb300 text-sm text-justify">
-                                <img style="float: right;" src="/[##rep.current.largeIMG##]" alt="@name">
+                                <img style="margin-bottom: 20px;" src="/[##rep.current.largeIMG##]" alt="@name">
                                 <p>
                                     [##rep.current.description##]
                                 </p>
@@ -567,7 +571,7 @@
     </section>
     
 </basis>
-        <section class="section6 mb-28" dir="rtl">
+        <section class="section6 mb-8" dir="rtl">
 
             <div class="Title-main w-90p mx-auto mb-5 relative overflow-hidden flex justify-start gap-4 items-center">
                 <span class="line-content relative w-[60px]">
@@ -576,14 +580,70 @@
                 </span>
 
                 <h3
-                    class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-blabg-black">
+                    class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-base leading-37.57 text-blabg-black">
                     سخنرانی ها
 
                 </h3>
             </div>
-            <div class=" gap-x-8 flex pr-[5%]">
+            <div class="">
                 <!-- Slider main container -->
-                <div class="swiper rightSlider relative w-[36%]">
+                <div class="swiper leftSlider overflow-hidden mb-6 py-[5%]">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+
+                        <basis core="print" datamembername="db.posterGallery1002">
+                           
+                            <face>
+                                <div class="swiper-slide group openVideoGallery6">
+                                    <div class="inVideo grayscale duration-500 scale-90 flex items-center justify-center group-[&.swiper-slide-active]:grayscale-0 group-[&.swiper-slide-active]:scale-100">
+        
+                                        <img class="w-full" src="/@largeIMG" alt="@name">
+                                        <div class="play-popup-container playbtn  w-[50px] h-[50px] absolute cursor-pointer">
+                                            <div class="play-popup-btn relative flex items-center justify-center"
+                                                data-video="https://player.vimeo.com/video/619757568?dnt=1&amp;app_id=122963">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
+                                                    viewBox="0 0 153.417 153.417">
+                                                    <g id="Group_457" data-name="Group 457"
+                                                        transform="translate(-1061.792 -431.792)">
+                                                        <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1063 433)"
+                                                            fill="none" stroke="#fff" stroke-width="1" opacity="0.3">
+                                                            <circle cx="75.5" cy="75.5" r="75.5" stroke="none" />
+                                                            <circle cx="75.5" cy="75.5" r="75" fill="none" />
+                                                        </g>
+                                                        <path id="Path_1" data-name="Path 1"
+                                                            d="M75.708,0A75.708,75.708,0,1,1,0,75.708"
+                                                            transform="translate(1062.792 432.792)" fill="none" stroke="#fff"
+                                                            stroke-width="2" />
+                                                    </g>
+                                                </svg>
+                                                <div class="play-popup-btn__circle absolute">
+                                                    <div class="play-popup-btn__circle__bullet"></div>
+                                                    <span class="play-popup-btn__circle__text text-left">
+                                                        <p
+                                                            class="font-IRANSansWeb300  text-[8px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                            Play
+        
+                                                        </p>
+                                                        <p class="font-IRANSansWeb500 text-[8px] text-white">
+        
+                                                            video
+                                                        </p>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                                
+                            </face>
+                        </basis>
+
+                    </div>
+
+                </div>
+                <div class="swiper rightSlider relative w-90p mx-auto">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper">
                         <!-- Slides -->
@@ -592,14 +652,14 @@
                            
                             <face>
                                 <div class="swiper-slide flex flex-col justify-center">
-                                    <h5 class="font-IRANSansWeb700 text-lg mb-4">
+                                    <h5 class="font-IRANSansWeb700 text-sm mb-4">
                                        @name
                                     </h5>
                                     <!-- <span class="font-IRANSansWeb400 text-lg mb-3">
                                         روز دوم
                                     </span> -->
-                                    <div class="para ShowMorePara6 font-IRANSansWeb400 text-sm mb-4 text-justify">
-                                        <p style="line-height: 22px;">
+                                    <div class="para ShowMorePara6 font-IRANSansWeb300 text-sm mb-4 text-justify">
+                                        <p style="line-height: 22px;overflow: hidden;display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 4;">
                                          @description
                                         </p>
                                     </div>
@@ -656,62 +716,7 @@
                     </div>
                 </div>
                 <!-- Slider main container -->
-                <div class="swiper leftSlider overflow-hidden pl-[5%] w-[64%]">
-                    <!-- Additional required wrapper -->
-                    <div class="swiper-wrapper">
-                        <!-- Slides -->
-
-                        <basis core="print" datamembername="db.posterGallery1002">
-                           
-                            <face>
-                                <div class="swiper-slide openVideoGallery6">
-                                    <div class="inVideo grayscale duration-500 scale-90 flex items-center justify-center ">
-        
-                                        <img class="w-full" src="/@largeIMG" alt="@name">
-                                        <div class="play-popup-container playbtn  w-[126px] h-[126px] absolute cursor-pointer">
-                                            <div class="play-popup-btn relative flex items-center justify-center"
-                                                data-video="https://player.vimeo.com/video/619757568?dnt=1&amp;app_id=122963">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
-                                                    viewBox="0 0 153.417 153.417">
-                                                    <g id="Group_457" data-name="Group 457"
-                                                        transform="translate(-1061.792 -431.792)">
-                                                        <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1063 433)"
-                                                            fill="none" stroke="#fff" stroke-width="1" opacity="0.3">
-                                                            <circle cx="75.5" cy="75.5" r="75.5" stroke="none" />
-                                                            <circle cx="75.5" cy="75.5" r="75" fill="none" />
-                                                        </g>
-                                                        <path id="Path_1" data-name="Path 1"
-                                                            d="M75.708,0A75.708,75.708,0,1,1,0,75.708"
-                                                            transform="translate(1062.792 432.792)" fill="none" stroke="#fff"
-                                                            stroke-width="2" />
-                                                    </g>
-                                                </svg>
-                                                <div class="play-popup-btn__circle absolute">
-                                                    <div class="play-popup-btn__circle__bullet"></div>
-                                                    <span class="play-popup-btn__circle__text text-left">
-                                                        <p
-                                                            class="font-IRANSansWeb300  text-lg text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
-                                                            Play
-        
-                                                        </p>
-                                                        <p class="font-IRANSansWeb500 text-lg text-white">
-        
-                                                            video
-                                                        </p>
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                              
-                                
-                            </face>
-                        </basis>
-
-                    </div>
-
-                </div>
+           
             </div>
 
 
@@ -719,16 +724,16 @@
 
                     <basis core="repeater" name="repg1002" datamembername="db.posterGallery1002">
                         
-                    <div dir="rtl" class="modal fade bs-example-modal-openParaSlide6@RowNumber" tabindex="-1" role="dialog"
+                    <div dir="rtl" class="modal fade bs-example-modal-openParaSlide6[##db.posterGallery1002.RowNumber##]" tabindex="-1" role="dialog"
                     aria-labelledby="myLargeModalLabel" aria-hidden="true">
         
-                    <div class="modal-dialog w-[77%]">
+                    <div class="modal-dialog" style="margin: 100px auto 0 auto;">
         
                         <!-- Modal Content: begins -->
                         <div class="modal-content bg-light-gray shadow-none">
         
                             <!-- Modal Header -->
-                            <div class="modal-header absolute ring-0" style="border: none; transform: translateX(100%);">
+                            <div class="modal-header absolute ring-0" style="border: none;transform: translateY(-100%);padding: 0 0 10px 0;">
                                 <button type="button" class="close group opacity-100" data-dismiss="modal"
                                     aria-label="Close">
                                     <span aria-hidden="true">
@@ -806,13 +811,13 @@
                         </span>
         
                         <h3
-                            class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-white">
+                            class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-base leading-37.57 text-white">
                             گالری تصاویر
                         </h3>
                     </div>
         
                     <div class="sliderSection">
-                        <div class="swiper imgGallerySlider pt-28">
+                        <div class="swiper imgGallerySlider pt-6">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
                                 <!-- Slides -->
@@ -823,7 +828,7 @@
                             <!-- <div
                                 class="conferSliderPagination mx-auto absolute !bottom-0 left-0 right-0 flex justify-center items-center z-1 !w-[537px] bg-black pt-5 pb-9">
                             </div> -->
-                            <div
+                            <!-- <div
                                 class="nextconfer [&.swiper-button-disabled]:hidden cursor-pointer group z-1 absolute top-[50%] right-0">
                                 <div
                                     class="inner relative flex items-center gap-x-2 group-hover:before:scale-x-[1.2] before:duration-300 before:origin-right before:w-[71px] before:inline-block before:h-px before:bg-white">
@@ -842,7 +847,7 @@
                                         PREV
                                     </span>
                                 </div>
-                            </div>
+                            </div> -->
         
                         </div>
         
@@ -860,7 +865,7 @@
                     <div class="inVideo duration-1000 flex items-center justify-center relative">
                         <img class="w-full" src="/@largeIMG" alt="@name">
 
-                        <div class="overZoom cursor-pointer duration-500 opacity-0 group-hover:opacity-100 z-1 bg-mainYellow/[0.2] absolute w-full h-full flex items-center justify-center">
+                        <div class="overZoom cursor-pointer duration-500 opacity-0 group-[&.swiper-slide-active]:opacity-100 z-1 bg-mainYellow/[0.2] absolute w-full h-full flex items-center justify-center">
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_571_6044)">
@@ -886,20 +891,20 @@
         <basis core="print" datamembername="db.videoGallery">
             <layout>
                 <section class="section8 pt-32 pb-24 bg-black" dir="rtl">
-        
-                    <div class="Title-main w-90p mx-auto mb-5 relative  flex justify-start gap-4 items-center">
-                        <span class="line-content relative">
+                    <div class="Title-main w-90p mx-auto relative overflow-hidden flex justify-start gap-4 items-center">
+                        <span class="line-content relative w-[60px]">
                             <span
-                                class="line duration-700 !w-[2px] absolute flex left-0 mx-auto justify-center right-0 delay-100 h-[2px] bg-white my-auto"
-                                style="height: 60px;width: 2px;right: 30px;bottom: 0;transform: translateY(-100%);"></span>
+                                class="line duration-700 absolute flex left-0 mx-auto justify-center right-0 delay-100 w-0 h-[2px] bg-white my-auto"></span>
                         </span>
         
-                        <h3 style="writing-mode: vertical-rl;transform: rotate(180deg);"
-                            class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-2xl leading-37.57 text-white">
-                            گالری فیلم
+                        <h3
+                            class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-base leading-37.57 text-white">
+                          
+ گالری فیلم
+ 
                         </h3>
                     </div>
-                    <div class="swiper videoGallery relative">
+                    <div class="swiper w-90p mx-auto videoGallery relative">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
                             <!-- Slides -->
@@ -915,7 +920,7 @@
                                     class="inner relative flex items-center gap-x-2 group-hover:before:scale-x-125 before:duration-300 before:origin-left before:w-[71px] before:inline-block before:h-px before:bg-white">
                                     <span
                                         class="group-hover:translate-x-[20px] duration-300 font-IRANSansWeb300 text-sm text-white">
-                                        NEXT
+                                        PREVIEW
                                     </span>
                                 </div>
                             </div>
@@ -924,7 +929,9 @@
                                     class="inner relative flex items-center gap-x-2 group-hover:after:scale-x-[1.2] after:duration-300 after:origin-right after:w-[71px] after:inline-block after:h-px after:bg-white">
                                     <span
                                         class="group-hover:-translate-x-[20px] duration-300 font-IRANSansWeb300 text-sm text-white">
-                                        PREVIEW
+                                        
+NEXT
+
                                     </span>
                                 </div>
                             </div>
@@ -935,7 +942,7 @@
             </layout>
  
             <face>
-                  <div class="swiper-slide group pt-44 pb-28 relative after:absolute after:bg-gradient-to-b after:from-[#5F5F5F12] after:via-[#807449] after:to-[#5F5F5F12] after:w-90p after:mx-auto after:h-full after:inset-0 ">
+                  <div class="swiper-slide group pt-44 pb-28 relative after:absolute after:bg-gradient-to-b after:from-[#5F5F5F12] after:via-[#807449] after:to-[#5F5F5F12] after:mx-auto after:h-full after:inset-0 ">
                                 <div
                                     class="inVideo brightness-[0.3] blur-[10px] group-[.swiper-slide-active]:brightness-100 group-[.swiper-slide-active]:blur-0 group-[.swiper-slide-prev]:translate-x-[80px]  group-[.swiper-slide-next]:-translate-x-[80px] group-[.swiper-slide-active]:scale-110 duration-500 origin-bottom relative z-1  flex items-center justify-center ">
                                     <div class="openGalleryPop absolute z-1 cursor-pointer top-1 right-2.5">
@@ -956,7 +963,7 @@
                                     <div data-videoUrl=""
                                         class="play-popup-container openVideoGallery playbtn w-[126px] h-[126px] absolute cursor-pointer">
                                         <div class="play-popup-btn relative flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                                                 viewBox="0 0 153.417 153.417">
                                                 <g id="Group_457" data-name="Group 457"
                                                     transform="translate(-1061.792 -431.792)">
@@ -975,11 +982,11 @@
                                                 <div class="play-popup-btn__circle__bullet"></div>
                                                 <span class="play-popup-btn__circle__text text-left">
                                                     <p
-                                                        class="font-IRANSansWeb300  text-lg text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                        class="font-IRANSansWeb300  text-[8px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                                         Play
         
                                                     </p>
-                                                    <p class="font-IRANSansWeb500 text-lg text-white">
+                                                    <p class="font-IRANSansWeb500 text-[8px] text-white">
         
                                                         video
                                                     </p>
@@ -989,7 +996,7 @@
                                     </div>
                                 </div>
                                 <div
-                                    class="name delay-200 absolute left-0 right-0 bottom-0 text-center -translate-y-100 opacity-0 duration-500 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:translate-y-[0]">
+                                    class="name delay-200 absolute left-0 right-0 bottom-14 text-center -translate-y-100 opacity-0 duration-500 group-[.swiper-slide-active]:opacity-100 group-[.swiper-slide-active]:translate-y-[0]">
         
                                     <span class="font-IRANSansWeb300 text-sm text-white">
                                        @name
@@ -1001,13 +1008,14 @@
 
 
 
-        <basis core="call" file="footer.inc" />
+        <basis core="call" file="footer2.inc" pageindex="[##cms.cms.pageindex##]" />
+
     </div>
 
 
 
 
-    <div style="z-index: 100;"
+    <div style="z-index: 100;overflow: auto;"
         class="popUpVideo h-svh inset-0 z-1 w-svw bg-black -translate-y-[120%] duration-1000 fixed"
         data-lenis-prevent="true">
         <div class="closepopUpVideo group absolute top-16 right-[5%] cursor-pointer z-3">
@@ -1049,12 +1057,12 @@
                 </svg>
 
             </div>
-            <div class="thumbContainer mt-44 grid grid-cols-3 gap-x-10 gap-y-12 w-90p mx-auto" dir="rtl">
+            <div class="thumbContainer mt-44 w-90p mx-auto" dir="rtl">
 
 <basis core="print" datamembername="db.videoGallery">
   
     <face>
-        <div class="thumbBox flex items-center relative justify-center">
+        <div class="thumbBox mb-5 flex items-center relative justify-center">
             <div class="imgS">
                <img src="/@largeIMG" class="w-full" alt="">
             </div>
@@ -1166,14 +1174,14 @@
                 </svg>
 
             </div>
-            <div class="thumbContainer mt-44 grid grid-cols-3 gap-x-10 gap-y-12 w-90p mx-auto" dir="rtl">
+            <div class="thumbContainer mt-44 w-90p mx-auto" dir="rtl">
 
 
                 <basis core="print" datamembername="db.posterGallery1002">
                    
                     <face>
                         
-                        <div class="thumbBox6 flex items-center relative justify-center">
+                        <div class="thumbBox6 mb-5 flex items-center relative justify-center">
                             <div class="imgS">
                               <img src="/@largeImg" class="w-full" alt="">
                             </div>
@@ -1410,11 +1418,11 @@
 
 
 
-    <basis core="call" file="script.inc" />
+    <basis core="call" file="script-mobile.inc" />
     <script src='[##cms.cms.cdn##]/_js/bootstrap3.3.7.min.js'></script>
     <script src="[##cms.cms.cdn##]/_js/readmore.min.js"></script>
     <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.5.min.js"></script>
-    <script src="[##cms.cms.cdn##]/js/posterShow.js"></script>
+    <script src="[##cms.cms.cdn##]/js/posterShow-mobile.js"></script>
 </body>
 
 </html>

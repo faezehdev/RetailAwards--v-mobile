@@ -17,6 +17,30 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "IRANSansWeb300";
+  src: url("../_fonts/IRANSansWeb_Light.eot");
+  src: url("../_fonts/IRANSansWeb_Light.eot?#iefix")
+      format("embedded-opentype"),
+    url("../_fonts/IRANSansWeb_Light.woff") format("woff"),
+    url("../_fonts/IRANSansWeb_Light.woff2") format("woff2"),
+    url("../_fonts/IRANSansWeb_Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "IRANSansWeb400";
+  src: url("../_fonts/IRANSansWebRegular.eot");
+  src: url("../_fonts/IRANSansWebRegular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../_fonts/IRANSansWebRegular.woff") format("woff"),
+    url("../_fonts/IRANSansWebRegular.woff2") format("woff2"),
+    url("../_fonts/IRANSansWebRegular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "Estedad400";
   src: 
     url("../_fonts/Estedad-Regular.woff2") format("woff2"),
@@ -698,4 +722,34 @@ transition: all 700ms;
 }
 .plyr {
   width: 100%;
+}
+
+
+.posterShow .Mobile_Header{
+  position: absolute;
+  
+}
+.posterShow .pagination1 .current{
+
+  font-family: "IRANSansWeb400";
+font-size: 25px;
+line-height: 39.13px;
+
+}
+.posterShow .pagination1 i{
+  font-family: "IRANSansWeb700";
+  font-size: 16px;
+  margin: 0 5px;
+  color: #FFCB05;
+}
+.posterShow .pagination1 .total{
+  font-family: "IRANSansWeb300";
+  font-size: 14px;
+
+  
+}
+
+
+.popOpen {
+  transform: translateY(0) !important;
 }
