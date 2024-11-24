@@ -908,6 +908,14 @@ video {
   margin-top: 8em;
 }
 
+.mt-\[6\+em\] {
+  margin-top: 6+em;
+}
+
+.mt-\[6em\] {
+  margin-top: 6em;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -1070,6 +1078,18 @@ video {
 .h-max {
   height: -moz-max-content;
   height: max-content;
+}
+
+.h-\[50vh\] {
+  height: 50vh;
+}
+
+.max-h-0 {
+  max-height: 0px;
+}
+
+.max-h-\[50vh\] {
+  max-height: 50vh;
 }
 
 .min-h-\[400px\] {
@@ -2718,6 +2738,10 @@ video {
   line-height: 1rem;
 }
 
+.text-\[30px\] {
+  font-size: 30px;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -2856,6 +2880,10 @@ video {
 
 .leading-\[34\.43px\] {
   line-height: 34.43px;
+}
+
+.leading-\[46\.96px\] {
+  line-height: 46.96px;
 }
 
 .text-\[\#336699\]\/\[\.35\] {
@@ -3251,6 +3279,10 @@ video {
 
 .duration-\[100\] {
   transition-duration: 100;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
 }
 
 .ease-in-expo {
@@ -4149,6 +4181,10 @@ mark {
   position: relative;
 }
 
+.plyr {
+  width: 100%;
+}
+
 @media (min-width: 480px) {
   .sm\:container {
     width: 100%;
@@ -4311,6 +4347,11 @@ mark {
 .hover\:bg-white:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-mainYellow:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 190 27 / var(--tw-bg-opacity, 1));
 }
 
 .hover\:font-bold:hover {
