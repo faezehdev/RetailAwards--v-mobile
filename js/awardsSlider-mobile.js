@@ -22,3 +22,5 @@ const awardsSlider = new Swiper('.awardsSlider', {
   
   
   });
+
+
