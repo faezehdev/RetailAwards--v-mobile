@@ -98,9 +98,11 @@ jQuery(".openPara").readmore({
 const branSlider = new Swiper(".branSlider", {
   // Optional parameters
   loop: true,
-  slidesPerView: 5,
+  slidesPerView: 2,
   speed: 1000,
-  spaceBetween: 51,
+  spaceBetween: 18,
+  centeredSlides: true,
+
   autoplay: {
     delay: 0,
   },
@@ -109,7 +111,7 @@ const branSlider = new Swiper(".branSlider", {
 const commendSlider = new Swiper(".commendSlider", {
   // Optional parameters
   loop: true,
-  slidesPerView: 2.8,
+  slidesPerView: 1.3,
   speed: 1000,
   spaceBetween: 20,
   // Navigation arrows
@@ -124,22 +126,22 @@ const imgGallerySlider = new Swiper(".imgGallerySlider", {
   slidesPerView: 2,
   speed: 1000,
   centeredSlides: true,
-  spaceBetween: 48,
+  spaceBetween: 5,
   // Navigation arrows
-  navigation: {
-    nextEl: ".nextconfer",
-    prevEl: ".prevconfer",
-  },
+  // navigation: {
+  //   nextEl: ".nextconfer",
+  //   prevEl: ".prevconfer",
+  // },
   grabCursor: true,
 });
 
 const conferSlider = new Swiper(".conferSlider", {
   // Optional parameters
   //   loop: true,
-  slidesPerView: 2,
+  slidesPerView: 1.2,
   speed: 1000,
   centeredSlides: true,
-  spaceBetween: 48,
+  spaceBetween: 19,
   // Navigation arrows
   navigation: {
     nextEl: ".prevconfer",
@@ -218,10 +220,10 @@ leftSlider.controller.control = rightSlider;
 const videoGallery = new Swiper(".videoGallery", {
   // Optional parameters
   loop: true,
-  slidesPerView: 2,
+  slidesPerView: 1,
   speed: 1000,
-  centeredSlides: true,
-  spaceBetween: 200,
+  // centeredSlides: true,
+  // spaceBetween: 200,
 
   // If we need pagination
   pagination: {
@@ -663,7 +665,7 @@ openVideoGallery6.forEach((element, i) => {
   element.addEventListener("click", function (params) {
     console.log(element);
 
-    if (galleryFlag) {
+    if (galleryFlag && sGalleryFlag) {
       fThumb6.classList.add("popOpen");
       popUpVideoGalleryContainer6.classList.add("popOpen");
       sGallery6.classList.add("popOpen");
@@ -679,3 +681,6 @@ openVideoGallery6.forEach((element, i) => {
   });
 });
 
+
+lenis.destroy()
+body.style.overflow="auto"
