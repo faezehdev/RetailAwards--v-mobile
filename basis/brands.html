@@ -9,8 +9,14 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>لیست برندها</title>
 <meta name="description" content="لیست برندهای ریتیل شو">
-   <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
-   <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputMobile.css">
+    <basis core="call" file="styles-mobile.inc" />
+
+
+   <style>
+    .filterSlider .swiper-slide:last-child{
+        margin: 0!important;
+    }
+   </style>
 </head>
 <body>
    <main class="brandList min-h-svh flex flex-col justify-between" dir="rtl">
@@ -20,7 +26,7 @@
            <div class="filters w-90p mx-auto mt-16">
                <div class="swiper filterSlider pb-[30px]" dir="ltr">
                    <!-- Additional required wrapper -->
-                   <div class="swiper-wrapper" style="justify-content: end;">
+                   <div class="swiper-wrapper" style="justify-content: end;border-bottom: 1px solid #828282;">
                      <!-- Slides -->
    
                      <basis core="print" datamembername="db.filter">
@@ -43,7 +49,7 @@
                  </div>
            </div>
    
-           <div class="gridContainer py-3 overflow-hidden mb-16 gap-8 grid grid-cols-3 w-90p mx-auto">
+           <div class="gridContainer py-3 overflow-hidden mb-16 gap-1 grid grid-cols-3 w-90p mx-auto">
    
           
              

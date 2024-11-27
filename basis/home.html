@@ -44,11 +44,9 @@
     <title>ریتیل اواردز</title>
     <meta name="description" content="صفحه اصلی ریتیل اواردز">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"> -->
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/bootstrap.min.css" />
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
-
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputMobile.css" />
+    <basis core="call" file="styles-mobile.inc" />
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/homeForm.css" />
     <style>
         html {
@@ -80,6 +78,10 @@ body{
     background-color: transparent;
     position: absolute;
 }
+.homePage footer{
+    background-color: transparent;
+    margin-top: -5px;
+}
     </style>
 </head>
 
@@ -95,7 +97,7 @@ body{
                         <face>
                             <div class="cta__slider-item swiper-slide">
                                 <div class="media-wrapper slide-inner">
-                                    <video class="w-full h-full" src="/@largeIMG" muted autoplay playsinline
+                                    <video class="w-full h-full" src="[##cms.cms.cdn##]/@largeIMG" muted autoplay playsinline
                                         loop></video>
                                 </div>
                             </div>
@@ -107,7 +109,7 @@ body{
                             <!-- SLIDER ITEM -->
                             <div class="cta__slider-item swiper-slide">
                                 <picture class="media-wrapper slide-inner">
-                                    <img src="/@largeIMG" alt="@name" />
+                                    <img src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                                 </picture>
                             </div>
                             <!-- SLIDER ITEM -->
@@ -203,7 +205,7 @@ body{
                 <div class="imgS relative flex items-center justify-center -mt-[120px]">
                     <basis core="print" datamembername="db.image-contactDef">
                         <face filter="ord=10">
-                            <img class="w-full" src="/@largeIMG" alt="" />
+                            <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                         </face>
                     </basis>
                     <div data-videoUrl=""
@@ -264,7 +266,7 @@ body{
                         <face>
                             <div class="swiper-slide openVideoThumb">
                                 <div class="inVideo relative flex items-center justify-center">
-                                    <img class="w-full" src="/@largeIMG" alt="" />
+                                    <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                                     <div class="play-popup-container playbtn w-[55px] h-[55px] absolute cursor-pointer">
                                         <div class="play-popup-btn relative flex items-center justify-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="55" height="55"
@@ -321,10 +323,10 @@ body{
                                 class="line duration-700 absolute flex left-0 mx-auto justify-center right-0 delay-100 w-0 h-[2px] bg-black my-auto"></span>
                         </span>
 
-                        <h4 style="width: 250px;"
+                        <h3 style="width: 250px;"
                             class="font-IRANSansWeb500 relative duration-700 translate-y-[100%] font-medium text-base leading-37.57 text-blabg-black">
                             @text
-                        </h4>
+                        </h3>
                     </div>
                 </face>
             </basis>
@@ -341,7 +343,7 @@ body{
                                         <div class="w-full h-full flex items-center justify-center">
                                             <div class="imgS">
                                                 <img class="w-full object-cover h-full grayscale group-hover:grayscale-0 duration-500"
-                                                    src="/@largeIMG" alt="@name" />
+                                                    src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                                             </div>
                                         </div>
                                     </div>
@@ -397,7 +399,7 @@ body{
 
                                     <div class="swiper-slide">
                                         <div class="imgS h-full w-full">
-                                            <img class="w-full h-full object-cover" src="/@largeIMG" alt="@name" />
+                                            <img class="w-full h-full object-cover" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                                         </div>
                                     </div>
                                 </face>
@@ -462,9 +464,9 @@ body{
                         </div>
                     </div>
                     <div class="btns mt-10 flex justify-between gap-x-3">
-                        <a href="/دوره-های-برگزار-شده"
+                        <a href="/دوره-های-برگزار-شده" style="white-space: nowrap;text-align: center;padding-right: 0;padding-left: 0;"
                             class="py-3 hover:bg-mainYellow w-full text-center hover:no-underline duration-300 px-16 bg-light-gray rounded-md block font-IRANSansWeb400 text-sm text-black"
-                            href="">
+                            >
                             مشاهده لیست دوره های گذشته
                         </a>
 
@@ -482,7 +484,7 @@ body{
                 <face>
                     <div
                         class="imgS w-full relative after:w-full after:h-full after:absolute after:bg-black/[0.4] after:inset-0">
-                        <img class="w-full" src="/@largeIMG" alt="@name" />
+                        <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                     </div>
                     <button type="button"
                         class="btn signUpBtn absolute hover:bg-mainYellow duration-300 bg-light-gray py-5 px-6 rounded-md font-IRANSansWeb500 text-sm outline-none"
@@ -582,11 +584,11 @@ body{
                                                     <script type="text/template">
 
                                                 <span class="captcha-sefaresh">
-                                                    <img src="/@captcha@" width="88" height="44" class="captcha-sefaresh"
+                                                    <img src="[##cms.cms.cdn##]/@captcha@" width="88" height="44" class="captcha-sefaresh"
                                                         alt="captcha" title="captcha" />
                                                     <input type="hidden" name="captchaid" value="@captcha@" />
                                                 </span>
-                                            <img src="[##cms.cms.cdn##]/images/cached.png" class="refressh cursor-pointer refressh1" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
+                                            <img alt="refressh captcha" src="[##cms.cms.cdn##]/images/cached.png" class="refressh cursor-pointer refressh1" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
                                             <input style="border-bottom:none!important;" type="text" class="codeinputm" name="captcha" placeholder="جهت ثبت کد امنیتی را وارد فرمایید  " />
                                             </script>
                                                 </face>
@@ -665,7 +667,7 @@ body{
                         <face>
                             <div class="inVideo w-full relative flex items-center justify-center">
 
-                                <video src="/@largeIMG" id="player" playsinline class="w-full object-cover">
+                                <video src="[##cms.cms.cdn##]/@largeIMG" id="player" playsinline class="w-full object-cover">
 
                                 </video>
 
@@ -730,7 +732,7 @@ body{
                     <face>
                         <div class="thumbBox mb-5 flex items-center relative justify-center">
                             <div class="imgS">
-                                <img class="w-full" src="/@largeIMG" alt="" />
+                                <img class="w-full" src="[##cms.cms.cdn##]/@largeIMG" alt="@name" />
                             </div>
                             <div class="play-popup-container thumbBtn w-[64px] h-[64px] absolute cursor-pointer">
                                 <div class="play-popup-btn relative flex items-center justify-center"
