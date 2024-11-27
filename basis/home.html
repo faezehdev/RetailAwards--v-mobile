@@ -76,7 +76,10 @@
 body{
     overflow: auto;
 }
-
+.homePage header{
+    background-color: transparent;
+    position: absolute;
+}
     </style>
 </head>
 
@@ -636,7 +639,7 @@ body{
     </main>
 
     <div style="z-index: 100"
-        class="popUpVideo h-svh inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
+        class="popUpVideo h-svh overflow-hidden inset-0 z-1 w-svw bg-black -translate-y-[100%] duration-1000 fixed"
         data-lenis-prevent="true">
         <div class="closepopUpVideo group absolute top-16 right-[5%] cursor-pointer z-3">
             <svg class="group-hover:rotate-[360deg] duration-1000" width="34" height="34" viewBox="0 0 34 34"
@@ -655,9 +658,9 @@ body{
                 </defs>
             </svg>
         </div>
-        <div class="w-svw mt-24 pb-20 h-[80vh]" dir="rtl">
+        <div class="w-svw mt-24 pb-20 h-full" dir="rtl">
             <div class="flex h-full items-center justify-center">
-                <div class="imgS h-full" style="width: 70%">
+                <div class="imgS h-full" style="width: 100%;height: 40vh;">
                     <basis core="print" datamembername="db.video-contactDef">
                         <face>
                             <div class="inVideo w-full relative flex items-center justify-center">
@@ -670,10 +673,10 @@ body{
                                 <div class="ov overlay [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000
                                     absolute w-full h-full bg-[#0000004D] pointer-events-none"></div>
                                 <div
-                                    class="play-popup-container [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000 overlay w-[126px] h-[126px] absolute z-1 cursor-pointer">
+                                    class="play-popup-container [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000 overlay w-[50px] h-[50px] absolute z-1 cursor-pointer">
                                     <div class="play-popup-btn relative flex items-center justify-center"
                                         data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417"
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                                             viewBox="0 0 153.417 153.417">
                                             <g id="Group_457" data-name="Group 457"
                                                 transform="translate(-1061.792 -431.792)">
@@ -692,11 +695,11 @@ body{
                                             <div class="play-popup-btn__circle__bullet"></div>
                                             <span class="play-popup-btn__circle__text text-left">
                                                 <p
-                                                    class="font-IRANSansWeb300  text-lg text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                    class="font-IRANSansWeb300  text-[8px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                                     Play
 
                                                 </p>
-                                                <p class="font-IRANSansWeb500 text-lg text-white">
+                                                <p class="font-IRANSansWeb500 text-[8px] text-white">
 
                                                     video
                                                 </p>
@@ -929,6 +932,11 @@ body{
                 }, 2000);
             }
         })
+
+
+
+
+//   let videoC=document.querySelector(".popUpVideo .inVideo"),overlays=document.querySelectorAll(".overlay"),is=!0;videoC.addEventListener("click",(t=>{overlays.forEach((o=>{o.classList.add("hide"),t.stopPropagation();const e=new Plyr("#player");is&&(e.play(),is=!1)}))}));
     </script>
 </body>
 
