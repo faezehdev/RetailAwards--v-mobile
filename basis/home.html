@@ -42,7 +42,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ریتیل اواردز</title>
+<link rel="canonical" href="http://[##cms.request.full-url##]" />
+
 <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+
   <member type="list" name="list" request="taglist" preview="" ></member>
  </basis>
   <basis core="print" datamembername="tag.list"> 
@@ -56,41 +59,7 @@
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
     <basis core="call" file="styles-mobile.inc" />
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/homeForm.css" />
-    <style>
-        html {
-            font-size: unset;
-        }
 
-        .modal-backdrop {
-            background-color: white;
-        }
-
-        .captchaContainerclass input,
-        .captchaContainerclass [data-bc-answer-container] input[type=text] {
-            border-bottom: none !important;
-            border: none !important;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .section6 .imgS::after {
-            inset: 0;
-
-        }
-body{
-    overflow: auto;
-}
-.homePage header{
-    background-color: transparent;
-    position: absolute;
-}
-.homePage footer{
-    background-color: transparent;
-    margin-top: -5px;
-}
-    </style>
 </head>
 
 <body>
@@ -134,7 +103,7 @@ body{
                     <div class="prevSlide cursor-pointer group z-1">
                         <div
                             class="inner relative duration-300 flex items-center gap-x-2 before:duration-300 before:origin-left before:w-[20px] before:inline-block before:h-px before:bg-white">
-                            <span class=" duration-300 font-IRANSansWeb300 text-[10px] text-white">
+                            <span class=" duration-300 font-IRANSansWeb300 text-sm text-white">
                                 PREV
                             </span>
                         </div>
@@ -147,7 +116,7 @@ body{
                     <div class="nextSlide cursor-pointer group z-1">
                         <div
                             class="inner relative duration-300 flex items-center gap-x-2 after:duration-300 after:origin-right after:w-[20px] after:inline-block after:h-px after:bg-white">
-                            <span class=" duration-300 font-IRANSansWeb300 text-[10px] text-white">
+                            <span class=" duration-300 font-IRANSansWeb300 text-sm text-white">
                                 NEXT
                             </span>
                         </div>
@@ -594,10 +563,10 @@ body{
                                                 <span class="captcha-sefaresh">
                                                     <img src="[##cms.cms.cdn##]/@captcha@" width="88" height="44" class="captcha-sefaresh"
                                                         alt="captcha" title="captcha" />
-                                                    <input type="hidden" name="captchaid" value="@captcha@" />
+                                                    <input aria-label="captch"  type="hidden" name="captchaid" value="@captcha@" />
                                                 </span>
                                             <img alt="refressh captcha" src="[##cms.cms.cdn##]/images/cached.png" class="refressh cursor-pointer refressh1" run="atclient" bc-triggers="click" bc-name="cms.reload1" />
-                                            <input style="border-bottom:none!important;" type="text" class="codeinputm" name="captcha" placeholder="جهت ثبت کد امنیتی را وارد فرمایید  " />
+                                            <input aria-label="captchaInput"  style="border-bottom:none!important;" type="text" class="codeinputm" name="captcha" placeholder="جهت ثبت کد امنیتی را وارد فرمایید  " />
                                             </script>
                                                 </face>
                                             </basis>
@@ -685,7 +654,7 @@ body{
                                 <div
                                     class="play-popup-container [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000 overlay w-[50px] h-[50px] absolute z-1 cursor-pointer">
                                     <div class="play-popup-btn relative flex items-center justify-center"
-                                        data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
+                                        data-video="">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                                             viewBox="0 0 153.417 153.417">
                                             <g id="Group_457" data-name="Group 457"
@@ -744,7 +713,7 @@ body{
                             </div>
                             <div class="play-popup-container thumbBtn w-[64px] h-[64px] absolute cursor-pointer">
                                 <div class="play-popup-btn relative flex items-center justify-center"
-                                    data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
+                                    data-video="">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63"
                                         viewBox="0 0 153.417 153.417">
                                         <g id="Group_457" data-name="Group 457"
@@ -759,10 +728,10 @@ body{
                                         <div class="play-popup-btn__circle__bullet"></div>
                                         <span class="play-popup-btn__circle__text text-left">
                                             <p
-                                                class="font-IRANSansWeb300 text-[10px] text-white relative after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                class="font-IRANSansWeb300 text-sm text-white relative after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                                 Play
                                             </p>
-                                            <p class="font-IRANSansWeb500 text-[10px] text-white">
+                                            <p class="font-IRANSansWeb500 text-sm text-white">
                                                 video
                                             </p>
                                         </span>
@@ -902,13 +871,9 @@ body{
         }
 
         function renderFn1(params) {
-            let questions = document.querySelectorAll(
-                ".homeForm1 div[data-bc-question]"
-            );
+            let questions = document.querySelectorAll(".homeForm1 div[data-bc-question]");
             questions.forEach((element) => {
-                let title = element.querySelector(
-                    ".homeForm1 [data-bc-question-title]"
-                );
+                let title = element.querySelector(".homeForm1 [data-bc-question-title]");
                 let qInput = element.querySelector(".homeForm1 input");
                 let qTxtArea = element.querySelector(".homeForm1 _textarea");
                 if (title) {
@@ -917,6 +882,7 @@ body{
                     ).innerHTML;
                     if (qInput) {
                         qInput.setAttribute("placeholder", title);
+                        qInput.setAttribute("aria-label", title);
                     } else if (qTxtArea) {
                         qTxtArea.setAttribute("placeholder", title);
                     }

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تماس‌باما</title>
     <meta name="description" content="تماس‌باما">
+<link rel="canonical" href="http://[##cms.request.full-url##]" />
+
       <basis core="call" file="styles-mobile.inc" />
 <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
   <member type="list" name="list" request="taglist" preview="" ></member>
@@ -198,8 +200,8 @@
                   
                         <script type="text/template">
                            <div class="captchaBox">
-                               <input type="hidden" name="captchaid" value="@captcha@" />
-                              <input type="text" class="codeinputm" name="captcha" placeholder="کد امنیتی را وارد فرمایید  "  /> 
+                               <input aria-label="captchaid" type="hidden" name="captchaid" value="@captcha@" />
+                              <input aria-label="captchainput" type="text" class="codeinputm" name="captcha" placeholder="کد امنیتی را وارد فرمایید  "  /> 
                 
                               <svg class="refresh" alt="" bc-triggers="click" 
                               name="refresh.captcha" bc-value="true" width="28" height="23" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">

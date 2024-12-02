@@ -90,9 +90,9 @@ const swiper = new Swiper(slider, {
 
 let titleMain = document.querySelectorAll(".Title-main")
 titleMain.forEach(element => {
- gsap.to(element.querySelector("h1,h2,h4"),{
+ gsap.to(element.querySelector("h1,h2,h3,h4"),{
      scrollTrigger:{
-         trigger:element.querySelector("h1,h2,h4"),
+         trigger:element.querySelector("h1,h2,h3,h4"),
          start:"top 90%",
          end:"bottom bottom",
      },

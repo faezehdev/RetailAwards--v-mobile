@@ -94,9 +94,13 @@ function rendered() {
         "[data-bc-schema-column] [data-bc-question]:nth-child(4) textarea"
       );
     $(e).attr("placeholder", "  نام و نام‌خانوادگی "),
+    $(e).attr("aria-label", "  نام و نام‌خانوادگی "),
       $(t).attr("placeholder", "ایمیل  "),
+      $(t).attr("aria-label", "ایمیل  "),
       $(o).attr("placeholder", "  تلفن همراه  "),
+      $(o).attr("aria-label", "  تلفن همراه  "),
       $(c).attr("placeholder", "  درخواست خود را به صورت کامل وارد نمایید");
+      $(c).attr("aria-label", "  درخواست خود را به صورت کامل وارد نمایید");
     let n = !1,
       a = document.querySelector(".schemaBtn"),
       r = document.querySelectorAll('input[type="text"]');
