@@ -596,9 +596,13 @@ input[type="text"]:focus,
 .Contactus-mobile .captchaBox {
   height: 40px;
   display: flex;
+  margin-top: .3em;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+
+  background: #171717;
+  border-bottom: 1px solid #828282;
+  padding-bottom: .2em;
 }
 
 .Contactus-mobile .captchaBox input.codeinputm {
@@ -607,10 +611,13 @@ input[type="text"]:focus,
 
 .Contactus-mobile .captchaBox .refresh {
   order: 2;
+  width: 58px;
 }
 
 .Contactus-mobile .captchaBox .capcha {
   order: 3;
+  width: 107px;
+  height: 34px;
 }
 
 .Contactus-mobile .captchaBox input[type="hidden"] {
@@ -618,7 +625,7 @@ input[type="text"]:focus,
 }
 
 .Contactus-mobile .captchaBox input {
-  width: 100% !important;
+  width: 67% !important;
 
   font-size: 14px !important;
   font-weight: 400 !important;
@@ -644,6 +651,7 @@ input[type="text"]:focus,
 
 .Contactus-mobile .captchaBox img {
   height: 40px;
+  border-radius: 5px;
 }
 
 [data-bc-section] {
@@ -823,7 +831,9 @@ mark {
   transform: translateY(100%);
   transition: all 700ms;
 }
-
+.aboutUs-mobile .Text{
+  overflow: hidden;
+}
 .aboutUs-mobile .Text p {
   font-size: 14px;
   font-weight: 300;
@@ -833,6 +843,7 @@ mark {
   opacity: 0;
   transform: translateY(100%);
   transition: all 700ms;
+  text-align: center;
 }
 
 .aboutUs-mobile .inVideo {

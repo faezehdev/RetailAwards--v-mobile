@@ -5,17 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تماس‌باما</title>
     <meta name="description" content="تماس‌باما">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputMobile.css">
+<link rel="canonical" href="http://[##cms.request.full-url##]" />
+
+      <basis core="call" file="styles-mobile.inc" />
+<basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+  <member type="list" name="list" request="taglist" preview="" ></member>
+ </basis>
+  <basis core="print" datamembername="tag.list"> 
+  <face > 
+  <meta property="@key" content="@value" />
+  </face>
+  </basis>
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css" />
-    <script src="https://cdn.basiscore.net/academy.basiscore.com/_js/basiscore-2.23.1.min.js"></script>
-    <script src="https://cdn.basiscore.net/basispanel.ir/_js/alasql.min.js"></script>
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/rollerMobile.css" />
+    <script src="[##cms.cms.cdn##]/_js/basiscore-2.30.1.min.js"></script>
+    <script src="[##cms.cms.cdn##]/_js/alasql.min.js"></script>
 </head>
 <body class="bg-black">
     <main class="Contactus-mobile w-full overflow-hidden" dir="rtl">
         <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
       <div class="Contact-container mt-[6em] border-[#82828275] border-x-[1px]  border-y-[1px]
-        rounded-[10px] relative py-[3em] w-90p flex flex-col mx-auto ">
+        rounded-[10px] relative pt-[3em] w-90p flex flex-col mx-auto ">
       <div class="Logo-container w-full absolute top-0 translate-y-[-75%]  flex justify-center items-center">
         <span class="logo w-max px-[.8em] py-[.8em] bg-black">
             <img src="[##cms.cms.cdn##]/images/contact-us-mobile.png" alt="contact" >
@@ -131,13 +141,13 @@
                     <span class="Address font-IRANSansWeb400 font-normal text-sm leading-21.91  text-mainYellow text-center">
                         وب سایت
                     </span>
-                    <span class="Answer w-full flex flex-col justify-center items-center">
+                    <span class="Answer mb-[.5em] gap-[1em] mt-4 w-full flex flex-col justify-center items-center">
                         <basis core="print" datamembername="db.contactus">
                             <layout>
                                 @child
                             </layout>
                             <face filter="TypeID=243">
-                        <a  href="https://@Answer" alt="retailAwards" title="retailAwards" class="font-IRANSansWeb700 font-bold text-[15px] leading-[23.48px] text-white">
+                        <a  href="http://@Answer" alt="retailAwards" title="retailAwards" class="font-IRANSansWeb700 font-bold text-[15px] leading-[23.48px] text-white">
                             @Answer
                            </a>
                             </face>
@@ -152,7 +162,9 @@
       </div>
       </div>
       <div class="Form-Container w-90p mx-auto my-[3em]">
-        <div class="Titlebox w-full flex flex-col gap-2">
+        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+        <div class="Titlebox w-full mb-[1em] flex flex-col gap-2">
             <h2 class="font-IRANSansWeb400 font-normal text-[22px] leading-[34.43px] text-mainYellow">
                 فرم ارسال پیام
             </h2>
@@ -172,7 +184,7 @@
         run="atclient" 
         body="object_edit={##edit.object.value##}&captcha={##edit.object.captcha##}&captchaid={##edit.object.captchaid##}" 
         content-type="application/x-www-form-urlencoded" triggers="edit.object" if="{##edit.object|(false)##}" 
-        OnProcessed="OnProcessesEditObjectFn"> 
+        OnProcessed="OnProcessesEditObjectFn" onRendered="renderEditobject"> 
         </basis>
         <basis core="dbsource" source="trust_login" run="atclient" name="captcha" triggers="refresh.captcha">
             <member type="scalar" request="captcha" name="code" />
@@ -188,8 +200,8 @@
                   
                         <script type="text/template">
                            <div class="captchaBox">
-                               <input type="hidden" name="captchaid" value="@captcha@" />
-                              <input type="text" class="codeinputm" name="captcha" placeholder="کد امنیتی را وارد فرمایید  "  /> 
+                               <input aria-label="captchaid" type="hidden" name="captchaid" value="@captcha@" />
+                              <input aria-label="captchainput" type="text" class="codeinputm" name="captcha" placeholder="کد امنیتی را وارد فرمایید  "  /> 
                 
                               <svg class="refresh" alt="" bc-triggers="click" 
                               name="refresh.captcha" bc-value="true" width="28" height="23" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -209,7 +221,7 @@
                
                  bg-mainYellow flex justify-center items-center gap-2 schemaBtn" data-btn-add data-btn-submit="">
                    <span class="Text font-Estedad400 flex justify-center items-center
-                    font-normal text-[13px] text-black h-[54px] leading-[22.58px]">
+                    font-normal text-sm text-black h-[54px] leading-[22.58px]">
                     ثبت 
                    </span>
            </button>
@@ -230,6 +242,8 @@
         <span class="text"></span>
       
     </div>
+    <div class="lds-roller2"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
     <basis core="call" file="script-mobile.inc" />
     <script src="[##cms.cms.cdn##]/js/headerMobile-Dark.js"></script>
     <script src="[##cms.cms.cdn##]/js/contact-mobile.js"></script>

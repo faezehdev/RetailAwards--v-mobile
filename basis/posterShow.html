@@ -1,7 +1,9 @@
 <basis core="dbsource" request="seo" source="basiscore" name="db" lid="1">
     <member name="seolist" type="list" request="product" id="[##cms.query.id##]"></member>
 </basis>
-
+<basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]" > 
+    <member request="json-ld" type="scalar" name="fq" /> 
+   </basis>
 <basis core="dbsource" source="media" name="db" lid="1" catid="2094" > <member type="list" name="videoGallery" perpage="10" pageno="1"/> </basis> 
 
 <basis core="dbsource" name="db" source="basiscore" lid="1" mid="1" usedforid="[##cms.query.id##]"> <member name="poster" type="view"/> </basis>	
@@ -32,20 +34,19 @@
             <meta name="description" content="[##cms.seo.description|db.seolist.description##]" />
         </face>
     </basis>
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/bootstrap.min.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputMobile.css">
-    <style>
-        html {
-            font-size: unset;
-        }
+    <link rel="canonical" href="http://[##cms.request.full-url##]" />
+    <basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+        <member type="list" name="list" request="taglist" preview="" ></member>
+       </basis>
+        <basis core="print" datamembername="tag.list"> 
+        <face > 
+        <meta property="@key" content="@value" />
+        </face>
+        </basis>
+    <basis core="call" file="styles-mobile.inc" />
+   <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css">
+<link rel="stylesheet" href="[##cms.cms.cdn##]/css/poster-mobile.css" media="print" onload="this.media='all'" />
 
-
-
-        .modal-backdrop {
-            background-color: white;
-        }
-    </style>
 </head>
 
 <body>
@@ -144,7 +145,7 @@
 
                         <div class="inVideo end-full flex items-center justify-center ">
 
-                            <img class="w-full" src="/[##rep2.current.largeIMG##]" alt="">
+                            <img loading="lazy" class="w-full" src="/[##rep2.current.largeIMG##]" alt="[##rep2.current.name##]">
                             <basis core="print" datamembername="db.link2">
 
                                 <face filter="TypeID=254">
@@ -171,11 +172,11 @@
                                                 <div class="play-popup-btn__circle__bullet"></div>
                                                 <span class="play-popup-btn__circle__text text-left">
                                                     <p
-                                                        class="font-IRANSansWeb300  text-[8px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                        class="font-IRANSansWeb300  text-sm text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                                         Play
 
                                                     </p>
-                                                    <p class="font-IRANSansWeb500 text-[8px] text-white">
+                                                    <p class="font-IRANSansWeb500 text-sm text-white">
 
                                                         video
                                                     </p>
@@ -229,7 +230,7 @@
                     <div
                         class=" p-5 flex items-center justify-center bg-light-gray aspect-square group hover:shadow-[0px_4px_12px_0px_rgba(0,_0,_0,_0.3)] rounded-md overflow-hidden duration-500">
                         <div class="imgS">
-                            <img class="w-full object-cover h-full duration-500 " src="/@largeIMG"
+                            <img loading="lazy" class="w-full object-cover h-full duration-500 " src="/@largeIMG"
                                 alt="@name">
                         </div>
                     </div>
@@ -275,7 +276,7 @@
                                 
                                 <div class="swiper-slide relative group overflow-hidden">
                                     <div class="imgS w-full group-hover:scale-125 duration-[5s]">
-                                        <img class="w-full grayscale hover:grayscale-0 duration-1000"
+                                        <img loading="lazy" class="w-full grayscale hover:grayscale-0 duration-1000"
                                             src="/@image" alt="@name">
                                     </div>
                                     <div
@@ -285,7 +286,7 @@
                                         </h3>
                                         <a href="/@link"
                                             class="ShowMore hover:no-underline justify-start mt-3 self-baseline w-auto flex gap-[10px] overflow-hidden">
-                                            <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">
+                                            <p class="font-IRANSansWeb400 font-normal text-sm leading-18.78 text-white">
                                                 بیشتر بدانید
                                             </p>
                                             <div class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative 
@@ -377,7 +378,7 @@
                                 class="inVideo end-full duration-1000 brightness-[0.3] blur-[10px] group-[.swiper-slide-active]:brightness-100 group-[.swiper-slide-active]:blur-0 group-[.swiper-slide-active]:-translate-y-[14px] flex items-center justify-center ">
 
 
-                                <img class="w-full" src="/[##rep1001.current.largeIMG##]" alt="">
+                                <img loading="lazy" class="w-full" src="/[##rep1001.current.largeIMG##]" alt="[##rep1001.current.name##]">
 
 
                                 <basis core="print" datamembername="db.link1001">
@@ -404,11 +405,11 @@
                                                     <div class="play-popup-btn__circle__bullet"></div>
                                                     <span class="play-popup-btn__circle__text text-left">
                                                         <p
-                                                            class="font-IRANSansWeb300  text-[8px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                            class="font-IRANSansWeb300  text-sm text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                                             Play
         
                                                         </p>
-                                                        <p class="font-IRANSansWeb500 text-[8px] text-white">
+                                                        <p class="font-IRANSansWeb500 text-sm text-white">
         
                                                             video
                                                         </p>
@@ -476,7 +477,7 @@
     
                                     <button data-toggle="modal" type="button" data-target=".bs-example-modal-openParaSlide@RowNumber"
                                         class="ShowMore btnOpenParaSlide btn hover:no-underline justify-start mt-3 mx-auto self-baseline w-auto flex gap-[10px] overflow-hidden">
-                                        <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-white">بیشتر
+                                        <p class="font-IRANSansWeb400 font-normal text-sm leading-18.78 text-white">بیشتر
                                             بدانید</p>
                                         <div
                                             class="circle w-[20px] h-[20px] rounded-full border-[1px] border-white text-white relative ">
@@ -547,7 +548,7 @@
                                 [##rep.current.name##]
                             </h4>
                             <div class="para font-IRANSansWeb300 text-sm text-justify">
-                                <img style="margin-bottom: 20px;" src="/[##rep.current.largeIMG##]" alt="@name">
+                                <img loading="lazy" style="margin-bottom: 20px;" src="/[##rep.current.largeIMG##]" alt="[##rep.current.name##]">
                                 <p>
                                     [##rep.current.description##]
                                 </p>
@@ -598,10 +599,10 @@
                                 <div class="swiper-slide group openVideoGallery6">
                                     <div class="inVideo grayscale duration-500 scale-90 flex items-center justify-center group-[&.swiper-slide-active]:grayscale-0 group-[&.swiper-slide-active]:scale-100">
         
-                                        <img class="w-full" src="/@largeIMG" alt="@name">
+                                        <img loading="lazy" class="w-full" src="/@largeIMG" alt="@name">
                                         <div class="play-popup-container playbtn  w-[50px] h-[50px] absolute cursor-pointer">
                                             <div class="play-popup-btn relative flex items-center justify-center"
-                                                data-video="https://player.vimeo.com/video/619757568?dnt=1&amp;app_id=122963">
+                                                data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50"
                                                     viewBox="0 0 153.417 153.417">
                                                     <g id="Group_457" data-name="Group 457"
@@ -621,11 +622,11 @@
                                                     <div class="play-popup-btn__circle__bullet"></div>
                                                     <span class="play-popup-btn__circle__text text-left">
                                                         <p
-                                                            class="font-IRANSansWeb300  text-[8px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                            class="font-IRANSansWeb300  text-sm text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                                             Play
         
                                                         </p>
-                                                        <p class="font-IRANSansWeb500 text-[8px] text-white">
+                                                        <p class="font-IRANSansWeb500 text-sm text-white">
         
                                                             video
                                                         </p>
@@ -667,7 +668,7 @@
                                     
                                     <button data-toggle="modal" type="button" data-target=".bs-example-modal-openParaSlide6@RowNumber"
                                         class="ShowMore para6Btn btn hover:no-underline justify-start mt-3 self-baseline w-auto flex gap-[10px] overflow-hidden">
-                                        <p class="font-IRANSansWeb400 font-normal text-xs leading-18.78 text-black">بیشتر
+                                        <p class="font-IRANSansWeb400 font-normal text-sm leading-18.78 text-black">بیشتر
                                             بدانید</p>
                                         <div
                                             class="circle w-[20px] h-[20px] rounded-full border-[1px] border-black text-black relative ">
@@ -771,7 +772,7 @@
 
                                     </h5>
                                     <div class="para">
-                                        <img src="/@largeImg" style="float: right;" alt="">
+                                        <img loading="lazy" src="/@largeImg" style="float: right;" alt="@name">
                                         <p>
                                             [##repg1002.current.description##]
                                         </p>
@@ -780,7 +781,7 @@
                                
                                         <face filter="RowNumber=1">
                                             <div class="imgS flex items-center justify-end">
-                                                <img src="/@largeIMG" alt="@name">
+                                                <img loading="lazy" src="/@largeIMG" alt="@name">
                                             </div>
                                             
                                         </face>
@@ -863,7 +864,7 @@
             <face>
                 <div class="swiper-slide group">
                     <div class="inVideo duration-1000 flex items-center justify-center relative">
-                        <img class="w-full" src="/@largeIMG" alt="@name">
+                        <img loading="lazy" class="w-full" src="/@largeIMG" alt="@name">
 
                         <div class="overZoom cursor-pointer duration-500 opacity-0 group-[&.swiper-slide-active]:opacity-100 z-1 bg-mainYellow/[0.2] absolute w-full h-full flex items-center justify-center">
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none"
@@ -957,7 +958,7 @@ NEXT
                                         </svg>
         
                                     </div>
-                                    <img class="w-full" src="/@largeImg" alt="">
+                                    <img loading="lazy" class="w-full" src="/@largeImg" alt="@name">
         
         
                                     <div data-videoUrl=""
@@ -982,11 +983,11 @@ NEXT
                                                 <div class="play-popup-btn__circle__bullet"></div>
                                                 <span class="play-popup-btn__circle__text text-left">
                                                     <p
-                                                        class="font-IRANSansWeb300  text-[8px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                        class="font-IRANSansWeb300  text-sm text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                                         Play
         
                                                     </p>
-                                                    <p class="font-IRANSansWeb500 text-[8px] text-white">
+                                                    <p class="font-IRANSansWeb500 text-sm text-white">
         
                                                         video
                                                     </p>
@@ -1015,7 +1016,7 @@ NEXT
 
 
 
-    <div style="z-index: 100;overflow: auto;"
+    <div style="z-index: 100;"
         class="popUpVideo h-svh inset-0 z-1 w-svw bg-black -translate-y-[120%] duration-1000 fixed"
         data-lenis-prevent="true">
         <div class="closepopUpVideo group absolute top-16 right-[5%] cursor-pointer z-3">
@@ -1064,11 +1065,11 @@ NEXT
     <face>
         <div class="thumbBox mb-5 flex items-center relative justify-center">
             <div class="imgS">
-               <img src="/@largeIMG" class="w-full" alt="">
+               <img loading="lazy" src="/@largeIMG" class="w-full" alt="@name">
             </div>
             <div class="play-popup-container thumbBtn w-[64px] h-[64px] absolute cursor-pointer">
                 <div class="play-popup-btn relative flex items-center justify-center"
-                    data-video="https://player.vimeo.com/video/619757568?dnt=1&amp;app_id=122963">
+                    data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
                     <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63"
                         viewBox="0 0 153.417 153.417">
                         <g id="Group_457" data-name="Group 457" transform="translate(-1061.792 -431.792)">
@@ -1082,11 +1083,11 @@ NEXT
                         <div class="play-popup-btn__circle__bullet"></div>
                         <span class="play-popup-btn__circle__text text-left">
                             <p
-                                class="font-IRANSansWeb300  text-[10px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                class="font-IRANSansWeb300  text-sm text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                 Play
     
                             </p>
-                            <p class="font-IRANSansWeb500 text-[10px] text-white">
+                            <p class="font-IRANSansWeb500 text-sm text-white">
     
                                 video
                             </p>
@@ -1183,11 +1184,11 @@ NEXT
                         
                         <div class="thumbBox6 mb-5 flex items-center relative justify-center">
                             <div class="imgS">
-                              <img src="/@largeImg" class="w-full" alt="">
+                              <img loading="lazy" src="/@largeImg" class="w-full" alt="@name">
                             </div>
                             <div class="play-popup-container thumbBtn w-[64px] h-[64px] absolute cursor-pointer">
                                 <div class="play-popup-btn relative flex items-center justify-center"
-                                    data-video="https://player.vimeo.com/video/619757568?dnt=1&amp;app_id=122963">
+                                    data-video="https://player.vimeo.com/video/619757568?dnt=1&app_id=122963">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63"
                                         viewBox="0 0 153.417 153.417">
                                         <g id="Group_457" data-name="Group 457" transform="translate(-1061.792 -431.792)">
@@ -1201,11 +1202,11 @@ NEXT
                                         <div class="play-popup-btn__circle__bullet"></div>
                                         <span class="play-popup-btn__circle__text text-left">
                                             <p
-                                                class="font-IRANSansWeb300  text-[10px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                                                class="font-IRANSansWeb300  text-sm text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                                 Play
         
                                             </p>
-                                            <p class="font-IRANSansWeb500 text-[10px] text-white">
+                                            <p class="font-IRANSansWeb500 text-sm text-white">
         
                                                 video
                                             </p>
@@ -1357,7 +1358,7 @@ NEXT
                         <face>
                             <div class="swiper-slide">
                                 <div class="imgS h-full flex items-center justify-center">
-                                    <img class="h-full object-cover" src="/@largeIMG" alt="">
+                                    <img loading="lazy" class="h-full object-cover" src="/@largeIMG" alt="@name">
                                 </div>
                             </div>
                             
@@ -1397,7 +1398,7 @@ NEXT
                         <face>
                             <div class="swiper-slide cursor-pointer">
                                 <div class="imgS">
-                                    <img class="w-full object-cover" src="/@largeIMG" alt="@name">
+                                    <img loading="lazy" class="w-full object-cover" src="/@largeIMG" alt="@name">
                                 </div>
                             </div>
                             
@@ -1421,8 +1422,13 @@ NEXT
     <basis core="call" file="script-mobile.inc" />
     <script src='[##cms.cms.cdn##]/_js/bootstrap3.3.7.min.js'></script>
     <script src="[##cms.cms.cdn##]/_js/readmore.min.js"></script>
+<script src="[##cms.cms.cdn##]/js/plyr.js"></script>
     <script src="[##cms.cms.cdn##]/_js/swiper-bundle11.0.5.min.js"></script>
     <script src="[##cms.cms.cdn##]/js/posterShow-mobile.js"></script>
+
+    <script type="application/ld+json"> 
+        [##json.fq.column1##] 
+        </script>
 </body>
 
 </html>

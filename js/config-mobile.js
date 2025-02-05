@@ -137,6 +137,7 @@ CL_Btn.addEventListener('click',()=>{
 
     setTimeout(()=>{
     mobileCont.classList.remove('OP')
+    lenis.start()
     },1500)
 })
 
