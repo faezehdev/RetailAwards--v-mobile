@@ -12,14 +12,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>دوره های برگزار شده</title>
     <meta name="description" content="دوره های برگزار شده">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputMobile.css">
+    <basis core="call" file="styles-mobile.inc" />
     <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css" />
 </head>
 <body>
     <main class="posterList-C w-full overflow-hidden flex-col flex min-h-screen justify-between" dir="rtl">
         <basis core="call" file="header1.inc" pageindex="[##cms.cms.pageindex##]" />
-        <div class="posterListContents w-90p mx-auto mt-[8em] flex flex-col">
+        <div class="posterListContents w-90p mx-auto mt-[3em] flex flex-col">
             <div class="top w-full flex flex-col">
                 <div class="Title-main  relative overflow-hidden w-full
                 flex justify-start items-center ">
@@ -83,7 +82,7 @@
             </div>
 
      
-            <div class="posterLists w-[75%] mx-auto flex flex-col gap-[3em] mb-[5em]">
+            <div class="posterLists mt-[2em] w-[75%] mx-auto flex flex-col gap-[3em] mb-[5em]">
                 <basis core="print" datamembername="db.posterList">
                     <layout>
                         @child

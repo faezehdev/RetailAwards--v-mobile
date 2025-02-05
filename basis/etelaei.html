@@ -13,6 +13,9 @@
 <basis core="dbsource" source="basiscore" name="db" lid="1" mid="1" usedforid="[##cms.query.id##]"> 
    <member type="list" name="relatedBlog" size="268x268" blgid="222"  propertyid="7249" />
 </basis>
+<basis core="dbsource" source="basiscore" name="json" lid="1" usedforid="[##cms.query.id##]">
+    <member request="json-ld" type="scalar" name="fq" />
+</basis>
 <!DOCTYPE html>
 <html lang="fa">
 <head>
@@ -31,7 +34,7 @@
          <section class="Section-1 section w-90p mx-auto flex flex-col mt-[1.5em]">
             <div class="etelaeiContainer w-full flex-col gap-[5em] flex ">
               <div class="DetailSec w-full flex flex-col ">
-                <div class="Boxes  gap-4 w-full flex flex-col pt-[3em] pb-[.8em] border-b border-gray-middle">
+                <div class="Boxes  gap-4 w-full flex flex-col pb-[.8em] border-b border-gray-middle">
                     <div class="Socials w-full flex justify-start items-start gap-3">
                         <span class="Social-item telegram">
                             <a href="https://t.me/share/url?url=http://zpps.undertest.ir/[##db.blog.link##]"
@@ -234,7 +237,9 @@
     <script src="[##cms.cms.cdn##]/_js/swiper.js"></script>
     <script src="[##cms.cms.cdn##]/js/headerMobile-Dark.js"></script>
     <script src="[##cms.cms.cdn##]/js/etelaei-mobile.js"></script>
-
+<script type="application/ld+json">
+    [##json.fq.column1##]
+  </script>
 </body>
 
 </html>
