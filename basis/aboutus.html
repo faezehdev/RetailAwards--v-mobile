@@ -14,9 +14,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>درباره‌ما</title>
     <meta name="description" content="درباره‌ما">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/outputMobile.css">
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" />
-    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/swiper-bundle.min.css" />
+<link rel="canonical" href="http://[##cms.request.full-url##]" />
+
+<basis core="call" file="styles-mobile.inc" />
+<link rel="stylesheet" href="[##cms.cms.cdn##]/css/plyr.css" media="print" onload="this.media='all'" />
+<basis core="dbsource" source="hosting" name="tag" urlid="[##cms.seo.urlid##]">
+  <member type="list" name="list" request="taglist" preview="" ></member>
+ </basis>
+  <basis core="print" datamembername="tag.list"> 
+  <face > 
+  <meta property="@key" content="@value" />
+  </face>
+  </basis>
 </head>
 <body class="bg-black">
     <main class="aboutUs-mobile w-full overflow-hidden" dir="rtl">
@@ -62,7 +71,7 @@
                     </layout>
 
                     <face filter="ord=1000">
-                        <video src="@largeIMG" id="player" playsinline 
+                        <video src="[##cms.cms.cdn##]/@largeIMG" id="player" playsinline preload="none"
                         poster="[##db.aboutGallery.largeIMG##]" class="w-full object-cover">
                 </video>
                     </face>
@@ -70,7 +79,7 @@
                 <div class="ov overlay [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000
                  absolute w-full h-full bg-[#0000004D] pointer-events-none"></div>
                 <div class="play-popup-container  [&.hide]:opacity-0 [&.hide]:pointer-events-none duration-1000 overlay w-[55px] h-[55px] absolute z-1 cursor-pointer">
-                    <div class="play-popup-btn translate-y-[-31%] relative flex items-center justify-center" data-video="https://player.vimeo.com/video/619757568?dnt=1&amp;app_id=122963">
+                    <div class="play-popup-btn translate-y-[-31%] relative flex items-center justify-center" data-video="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="153.417" height="153.417" viewBox="0 0 153.417 153.417">
                             <g id="Group_457" data-name="Group 457" transform="translate(-1061.792 -431.792)">
                             <g id="Ellipse_1" data-name="Ellipse 1" transform="translate(1063 433)" fill="none" stroke="#fff" stroke-width="1" opacity="0.3">
@@ -83,11 +92,11 @@
                         <div class="play-popup-btn__circle absolute ">
                             <div class="play-popup-btn__circle__bullet"></div>
                             <span class="play-popup-btn__circle__text text-left">
-                               <p class="font-IRANSansWeb300  text-[8px] text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
+                               <p class="font-IRANSansWeb300  text-sm text-white relative  after:w-[5px] after:h-[5px] after:absolute after:-left-3 after:top-[40%] after:bg-white after:rounded-full">
                                    Play 
 
                                </p>
-                            <p class="font-IRANSansWeb500 text-[8px] text-white">
+                            <p class="font-IRANSansWeb500 text-sm text-white">
 
                                 video
                             </p>
@@ -101,7 +110,6 @@
       <basis core="call" file="footer2.inc" pageindex="[##cms.cms.pageindex##]" />
     </main>
     <basis core="call" file="script-mobile.inc" />
-    <script src="[##cms.cms.cdn##]/_js/swiper.js"></script>
     <script src="[##cms.cms.cdn##]/js/headerMobile-Dark.js"></script>
     <script src="[##cms.cms.cdn##]/js/aboutUs-mobile.js"></script>
 

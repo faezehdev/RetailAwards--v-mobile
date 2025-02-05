@@ -931,3 +931,61 @@ mark {
 .Menu_Bar.OP{
   display: grid!important;
 }
+.filterSlider .swiper-slide:last-child{
+  margin: 0!important;
+}
+
+
+
+
+
+html {
+  font-size: unset;
+}
+
+.modal-backdrop {
+  background-color: white;
+}
+
+.homePage .captchaContainerclass input,
+.homePage .captchaContainerclass [data-bc-answer-container] input[type=text] {
+  border-bottom: none !important;
+  border: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.homePage .section6 .imgS::after {
+  inset: 0;
+
+}
+body{
+overflow: auto;
+}
+.homePage header{
+background-color: transparent;
+position: absolute;
+}
+.homePage footer{
+background-color: transparent;
+margin-top: -5px;
+}
+
+.Contactus-mobile .itemIcon{
+  flex-shrink: 0;
+}
+#login{
+border: none!important;
+}
+
+.Contactus-mobile .captchaBox input{
+  background-color: transparent!important;
+}
+.Contactus-mobile .captchaBox{
+  gap: 0!important;
+}
+a:hover{
+  text-decoration: none !important;
+}
