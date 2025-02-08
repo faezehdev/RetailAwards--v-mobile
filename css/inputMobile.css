@@ -830,6 +830,7 @@ mark {
   opacity: 0;
   transform: translateY(100%);
   transition: all 700ms;
+  text-align: justify;
 }
 .aboutUs-mobile .Text{
   overflow: hidden;
@@ -988,4 +989,88 @@ border: none!important;
 }
 a:hover{
   text-decoration: none !important;
+}
+.posterShow .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid white;
+  transition: 0.5s;
+  opacity: 1;
+}
+.posterShow  .swiper-pagination-bullet-active {
+  background-color: white;
+}
+.scrollSpanAnimation{
+  animation: scrollBar 3s infinite;
+}
+@keyframes scrollBar {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.popUpImgGallery .popUpSlider {
+overflow: hidden;
+}
+.popImgGalleryFractio .current {
+font-size: 25px;
+font-weight: 400;
+font-family: "IRANSansWeb400";
+color: white;
+}
+.popImgGalleryFractio .total {
+  font-size: 25px;
+  font-weight: 300;
+  font-family: "IRANSansWeb300";
+  color: white;
+  }
+  .popImgGalleryFractio  i{
+    color: #FFCB05;
+    font-size: 25px;
+font-weight: 400;
+  }
+  .btn.focus, .btn:focus, .btn:hover{
+    outline: none !important;
+    border: none !important;
+  }
+  .brandBox1 {
+    border: 1px solid #FEBE1B;
+    box-shadow: 0px 4px 14.4px 0px #00000040;
+  }
+ .homePage .paraSliderSection p{
+  font-family: "IRANSansWeb300";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21.91px;
+  }
+  .homePage .modal-content{
+min-width: unset !important;
+  }
+  .posterShow .section2 p{
+    font-family: "IRANSansWeb300";
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 28px;
+    text-align: justify;
+    }
+.posterShow .section4 p{
+      font-family: "IRANSansWeb300";
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 21.91px;
+      text-align: justify;
+  }
+  .posterShow .openParaSlide p,
+  .posterShow .ShowMorePara6 p,
+  .posterShow .modal-body p,
+  .posterShow .section8 .name span{
+  font-family: "IRANSansWeb300";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21.91px;
+  text-align: justify;
 }
